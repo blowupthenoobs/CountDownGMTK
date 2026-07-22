@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Elevator : MonoBehaviour
 {
     [SerializeField] float radius;
     [SerializeField] LayerMask playerLayer;
 
+    [SerializeField] string sceneName;
     public bool hasCompletedObjective;
+
     bool isInRange;
 
     // Start is called before the first frame update
@@ -26,9 +29,14 @@ public class Elevator : MonoBehaviour
     {
         isInRange = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
 
+        if ((Input.GetKeyDown(KeyCode.E)) && isInRange && !hasCompletedObjective)
+        {
+            Debug.Log("Need to Complete Objective!");
+        }
+
         if ((Input.GetKeyDown(KeyCode.E)) && isInRange && hasCompletedObjective)
         {
-            Debug.Log("Player Has Picked To Enter Elevator!");
+            SceneManager.LoadScene(sceneName);
         }
     }
 
