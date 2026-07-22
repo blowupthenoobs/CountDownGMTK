@@ -6,15 +6,22 @@ public class CameraFollower : MonoBehaviour
 {
 
     private GameObject Player;
+    private Vector3 playerPos;
+
+    private Vector3 newPos;
     
-    void Start()
+    public float followSpeed;
+    void Awake()
     {
-        //Player = FindWithTag("Player");
-        Debug.Log(Player);
+        Player = GameObject.FindWithTag("Player");
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+        playerPos = Player.gameObject.transform.position;
+
+        newPos = Vector3.Lerp(transform.position, playerPos, followSpeed);
+        newPos.z = -10f;
+        transform.position = newPos;
     }
 }
