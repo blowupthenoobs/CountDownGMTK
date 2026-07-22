@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3302471398538228173}
+  - {fileID: 2231939953620851228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1289450071744981160
@@ -48,6 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  weapons:
+  - {fileID: 3825789531380467982, guid: db0ffd209adbb0545ad7cb8f87c1e040, type: 3}
+  - {fileID: 7249005766027809180, guid: 0b310b017a79a9544befd63d21a237f9, type: 3}
+  - {fileID: 8011432840223475599, guid: 1479125a55b935740ad957abd8c2b94b, type: 3}
+  - {fileID: 165046940995871919, guid: 5ffa3769ded6ffe4d90d8c10e61fdcb8, type: 3}
+  weaponsSpawn: {fileID: 2231939953620851228}
 --- !u!61 &4605864543323390174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,6 +127,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!1 &6949095958175003319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2231939953620851228}
+  m_Layer: 3
+  m_Name: WeaponSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2231939953620851228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6949095958175003319}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.55, y: -0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 645086801602952632}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8091234092013385006
 GameObject:
   m_ObjectHideFlags: 0

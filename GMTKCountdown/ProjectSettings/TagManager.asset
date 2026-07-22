@@ -5,8 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Lever
+<<<<<<< Updated upstream
   - NodeX
   - NodeY
+=======
+  - Fists
+  - Sword
+  - Revolver
+  - Shotgun
+  - Sniper
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
