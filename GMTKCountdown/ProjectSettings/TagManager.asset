@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Lever
+  - NodeX
+  - NodeY
   layers:
   - Default
   - TransparentFX
