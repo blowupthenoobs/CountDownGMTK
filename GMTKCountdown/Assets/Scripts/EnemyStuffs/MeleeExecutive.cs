@@ -32,10 +32,14 @@ public class MeleeExecutive : EnemyScript
             if(CanSeePlayer())
                 RunAtPlayer(defaultMoveSpeed);   
             
-            if((target.transform.position - transform.position).magnitude <= minDistToAttack)
+            if(target != null)
             {
-                StartCoroutine(Attack());
+                if((target.transform.position - transform.position).magnitude <= minDistToAttack)
+                {
+                    StartCoroutine(Attack());
+                }
             }
+            
         }
     }
 

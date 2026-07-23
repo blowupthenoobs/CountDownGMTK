@@ -20,11 +20,6 @@ public class PlayerWeapon : MonoBehaviour
 
     public BulletSpawnPoint bulletSpawnPoint;
 
-    [SerializeField] bool isMelee;
-    bool isInRange;
-
-    RaycastHit2D boxRaycastHit;
-
     void Update()
     {
         SwitchIDValues();
@@ -43,11 +38,6 @@ public class PlayerWeapon : MonoBehaviour
                 requestedToShoot = true;
                 timeBetweenShots = 0;
             }
-
-            if(isMelee)
-            {
-               Melee();
-            }
         }
         else
         {
@@ -62,11 +52,6 @@ public class PlayerWeapon : MonoBehaviour
 
         Vector2 direction = new Vector2(mousePos.x - rotationPoint.position.x, mousePos.y - rotationPoint.position.y).normalized;
         rotationPoint.transform.up = direction;
-    }
-
-    void Melee()
-    {
-        
     }
 
     void SwitchIDValues()
@@ -117,18 +102,6 @@ public class PlayerWeapon : MonoBehaviour
             {
                 Instantiate(bullets[2], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
-        }
-    }
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if(other.CompareTag("Enemy"))
-        {
-            isInRange = true;
-        }
-        else
-        {
-            isInRange = false;
         }
     }
 }
