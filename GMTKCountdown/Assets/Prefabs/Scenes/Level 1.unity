@@ -550,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1550030367154638626, guid: dc9d5f1ab136ad84d9c87dc392aa8279, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4064497213650401816, guid: dc9d5f1ab136ad84d9c87dc392aa8279, type: 3}
       propertyPath: lungePower

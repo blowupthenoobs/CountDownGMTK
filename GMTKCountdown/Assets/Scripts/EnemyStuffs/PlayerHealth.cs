@@ -8,14 +8,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int health;
     [SerializeField] Slider healthBar;
 
-    void Update()
-    {
-        healthBar.value = health;
-    }
-
     public void TakeDamage(int damage)
     {
         health -= damage;
+        healthBar.value = health;
         Debug.Log(health);
     }
 }
