@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd7fa11c7438e04187100867bd7bad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionRadius: {fileID: 0}
   raycastLayers:
     serializedVersion: 2
     m_Bits: 72
