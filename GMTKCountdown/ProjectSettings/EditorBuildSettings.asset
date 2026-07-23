@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Prefabs/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/ElevatorTestScene.unity
+    path: Assets/Prefabs/Scenes/ElevatorTestScene.unity
     guid: 96f2e715c6a02e146930a381e604c515
   m_configObjects: {}
