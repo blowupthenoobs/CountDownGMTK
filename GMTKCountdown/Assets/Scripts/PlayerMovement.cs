@@ -13,17 +13,27 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
 
-    [SerializeField] GameObject[] weapons;
     [SerializeField] Transform weaponsSpawn;
+    public GameObject currentWeapon;
+
+    public GameObject weaponPlayerIsOver;
     
     void Awake()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();   
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
 
+        Weapon weapon = weaponPlayerIsOver.GetComponent<Weapon>();
+
+        if ((Input.GetKeyDown(KeyCode.E)) && weapon.canPickup)
+        {
+            currentWeapon = weaponPlayerIsOver;
+            Instantiate(weaponPlayerIsOver, weaponsSpawn.position, weaponsSpawn.rotation, weaponsSpawn.transform);
+            Debug.Log("Worked");
+        }
     }
 
     void FixedUpdate()
@@ -38,25 +48,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Sword"))
+        if (other.tag == "Weapon")
         {
-            Instantiate(weapons[0], weaponsSpawn.transform.position, weaponsSpawn.transform.rotation, weaponsSpawn.transform);
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Revolver"))
-        {
-            Instantiate(weapons[1], weaponsSpawn.transform.position, weaponsSpawn.transform.rotation, weaponsSpawn.transform);
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Shotgun"))
-        {
-            Instantiate(weapons[2], weaponsSpawn.transform.position, weaponsSpawn.transform.rotation, weaponsSpawn.transform);
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Sniper"))
-        {
-            Instantiate(weapons[3], weaponsSpawn.transform.position, weaponsSpawn.transform.rotation, weaponsSpawn.transform);
-            Destroy(other.gameObject);
+            weaponPlayerIsOver = other.gameObject;
         }
     }
 }
