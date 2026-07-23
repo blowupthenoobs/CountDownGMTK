@@ -26,12 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961597664535107480}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.818, y: 0.249, z: 0}
-  m_LocalScale: {x: 0.98692685, y: 0.0717765, z: 0.47851}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.7740239, y: 0.03724122, z: -0.07069088}
+  m_LocalScale: {x: 0.7895415, y: 0.057421204, z: 0.382808}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 645086801602952632}
+  m_Children:
+  - {fileID: 8787997209284285653}
+  m_Father: {fileID: 226001506433884833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6092145417480490468
 SpriteRenderer:
@@ -97,7 +98,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d7dbaf8a0e44643b0a1545797eee45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 4
+  fireRate: 1
+  bullet: {fileID: 1740409709549398360, guid: 46110266ac0af4e4f9506b7c617e1655, type: 3}
+  bulletSpawn: {fileID: 8787997209284285653}
+  player: {fileID: 6480221152798561691}
+  rotationSpeed: 10
+--- !u!1 &2198254311784382394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 226001506433884833}
+  m_Layer: 0
+  m_Name: WeaponRotationPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &226001506433884833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198254311784382394}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.66, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5696947608423692249}
+  m_Father: {fileID: 645086801602952632}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6029461529211880520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8787997209284285653}
+  m_Layer: 3
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8787997209284285653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029461529211880520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.508, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5696947608423692249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6480221152798561691
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +180,7 @@ GameObject:
   - component: {fileID: 4605864543323390174}
   - component: {fileID: 1001803851609457975}
   - component: {fileID: 4807645835163073045}
+  - component: {fileID: 3048126098580011535}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -133,7 +203,7 @@ Transform:
   m_Children:
   - {fileID: 3302471398538228173}
   - {fileID: 2231939953620851228}
-  - {fileID: 5696947608423692249}
+  - {fileID: 226001506433884833}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1289450071744981160
@@ -277,6 +347,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3048126098580011535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480221152798561691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daa56517e0de4b14993e58613e88a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &6949095958175003319
 GameObject:
   m_ObjectHideFlags: 0
