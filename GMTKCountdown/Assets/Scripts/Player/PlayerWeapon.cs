@@ -23,21 +23,15 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] Vector2 raycastSize;
 
-    public bool isMeleeWeapon;
-    public bool isInRange;
+    bool isMeleeWeapon;
+    bool isInRange;
 
     void Update()
     {
         SwitchIDValues();
         FireRate();
         Rotate();
-
-        isInRange = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
-
-        if((Input.GetMouseButtonDown(0)) && isInRange && isMeleeWeapon)
-        {
-            Debug.Log("Did damage to enemy!");
-        }
+        Melee();
     }
 
     void FireRate()
@@ -55,6 +49,16 @@ public class PlayerWeapon : MonoBehaviour
         else
         {
             requestedToShoot = false;
+        }
+    }
+
+    void Melee()
+    {
+        isInRange = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
+
+        if ((Input.GetMouseButtonDown(0)) && isInRange && isMeleeWeapon)
+        {
+            Debug.Log("Did damage to enemy!");
         }
     }
 
