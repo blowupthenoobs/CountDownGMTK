@@ -9,6 +9,10 @@ TagManager:
   - Weapon
   - Enemy
   - WeaponSpawnPoint
+  - TileSet
+  - Bullet
+  - EnemyCollide
+  - EnemyDontCollide
   layers:
   - Default
   - TransparentFX

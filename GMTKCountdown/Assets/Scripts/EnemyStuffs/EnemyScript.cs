@@ -60,8 +60,6 @@ public abstract class EnemyScript : MonoBehaviour
 
         if(hit.collider.gameObject == target)
             target.SendMessage("TakeDamage", damage);
-
-        // Debug.Log(hit.transform);
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)

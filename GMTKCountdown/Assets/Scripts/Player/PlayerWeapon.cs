@@ -101,7 +101,10 @@ public class PlayerWeapon : MonoBehaviour
 
             if(requestedToShoot)
             {
-                Instantiate(bullets[1], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+                for(int i = 0; i < 10; i++)
+                {
+                    Instantiate(bullets[1], bulletSpawn.transform.position, Quaternion.Euler(0, 0, bulletSpawn.transform.eulerAngles.z - 25 + (i*5)));
+                }   
             }
         }
         if (ID == 4)
