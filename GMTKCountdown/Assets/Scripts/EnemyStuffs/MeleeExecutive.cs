@@ -6,7 +6,11 @@ public class MeleeExecutive : EnemyScript
 {
     private bool seesPlayer;
     private bool attacking;
-    [SerializeField] Vector2 attackSize;
+    [SerializeField] float attackWidth;
+    [SerializeField] float minDistToAttack;
+    [SerializeField] float timeBetweenAttacks;
+    [SerializeField] float timeAfterAttacks;
+    [SerializeField] float lungePower;
 
     void Start()
     {
@@ -15,13 +19,40 @@ public class MeleeExecutive : EnemyScript
 
     void Update()
     {
+        
     }
 
     void FixedUpdate()
     {
-        if(CanSeePlayer())
-            RunAtPlayer(defaultMoveSpeed);   
-        
-        MeleeAttack(attackSize, lastSeenPlayerPosition - transform.position, 5);
+        if(!attacking)
+        {
+            rb.velocity = new Vector2();
+
+            Debug.Log("not attacking");
+            if(CanSeePlayer())
+                RunAtPlayer(defaultMoveSpeed);   
+            
+            if((target.transform.position - transform.position).magnitude <= minDistToAttack)
+            {
+                StartCoroutine(Attack());
+            }
+        }
+    }
+
+    private IEnumerator Attack()
+    {
+        attacking = true;
+        var direction = lastSeenPlayerPosition - transform.position;
+
+        Lunge(direction, 5);
+        yield return new WaitForSeconds(timeBetweenAttacks);
+        rb.velocity = new Vector2();
+        MeleeAttack(attackRange, 1f, Mathf.Atan2(direction.y, direction.x));
+        yield return new WaitForSeconds(timeBetweenAttacks);
+        MeleeAttack(attackRange, 1f, Mathf.Atan2(direction.y, direction.x));
+        yield return new WaitForSeconds(timeBetweenAttacks);
+        MeleeAttack(attackRange, 1f, Mathf.Atan2(direction.y, direction.x));
+        yield return new WaitForSeconds(timeAfterAttacks);
+        attacking = false;
     }
 }

@@ -13,6 +13,8 @@ public abstract class EnemyScript : MonoBehaviour
     protected bool sawPlayerLastFrame;
 
     [SerializeField] protected float defaultMoveSpeed;
+    [SerializeField] protected float attackRange;
+    [SerializeField] float damage;
 
     protected virtual void Awake()
     {
@@ -46,12 +48,20 @@ public abstract class EnemyScript : MonoBehaviour
         rb.MovePosition(rb.position + normalizedDirection * speed * Time.fixedDeltaTime);
     }
 
-    protected void MeleeAttack(Vector2 size, Vector2 attackDirection, float attackRange)
+    protected void Lunge(Vector2 direction, float power)
     {
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, size, 0f, attackDirection, attackRange, playerLayer);
+        rb.AddForce(direction * power, ForceMode2D.Impulse);
+    }
+
+    protected void MeleeAttack(float range, float attackWidth, float attackDirection)
+    {
+        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + (new Vector2(Mathf.Cos(attackDirection), Mathf.Sin(attackDirection)) * range / 2), new Vector2(range, attackWidth), attackDirection, Vector2.zero, 0f, playerLayer);
         // Debug.
 
-        Debug.Log(hit.transform);
+        if(hit.collider.gameObject == target)
+            target.SendMessage("TakeDamage", damage);
+
+        // Debug.Log(hit.transform);
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)
