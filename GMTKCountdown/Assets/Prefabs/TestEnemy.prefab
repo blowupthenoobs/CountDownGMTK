@@ -107,7 +107,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   defaultMoveSpeed: 1
-  attackRange: 10
+  attackRange: 20
   damage: 2
   attackWidth: 0.8
   minDistToAttack: 1.5

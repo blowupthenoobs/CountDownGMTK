@@ -799,6 +799,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4064497213650401816, guid: dc9d5f1ab136ad84d9c87dc392aa8279, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064497213650401816, guid: dc9d5f1ab136ad84d9c87dc392aa8279, type: 3}
+      propertyPath: minDistToAttack
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
