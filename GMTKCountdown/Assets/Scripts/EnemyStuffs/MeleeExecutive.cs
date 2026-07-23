@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MeleeExecutive : EnemyScript
 {
+    private bool seesPlayer;
     void Start()
     {
         
@@ -11,6 +12,13 @@ public class MeleeExecutive : EnemyScript
 
     void Update()
     {
-        
+        seesPlayer = CanSeePlayer();
+        // Debug.Log(CanSeePlayer());
+    }
+
+    void FixedUpdate()
+    {
+        if(seesPlayer)
+            RunAtPlayer(defaultMoveSpeed);   
     }
 }

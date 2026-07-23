@@ -4,18 +4,18 @@ using UnityEngine;
 
 public abstract class EnemyScript : MonoBehaviour
 {
-    private GameObject target;
-    private 
+    protected Rigidbody2D rb;
 
-    void Start()
-    {
-        
-    }
+    protected GameObject target;
+    [SerializeField] protected LayerMask raycastLayers;
+    protected Vector3 lastSeenPlayerPosition; 
+    protected bool sawPlayerLastFrame;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] protected float defaultMoveSpeed;
+
+    protected virtual void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     protected bool CanSeePlayer()
@@ -23,12 +23,26 @@ public abstract class EnemyScript : MonoBehaviour
         if(target == null)
             return false;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.position - target.transform.position);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.transform.position - transform.position, Mathf.Infinity, raycastLayers);
+        Debug.DrawLine(transform.position, hit.transform.position, new Color(0f, 0f, 1f));
+        // Debug.DrawLine(transform.position, target.transform.position - transform.position, new Color(1f, 0f, 0f)); //Dunno why this one doesn't work quite right
+        // Debug.Log(hit.transform);
 
-        if(hit)
+        if(hit.collider.gameObject == target)
+        {
+            lastSeenPlayerPosition = hit.transform.position;   
+            sawPlayerLastFrame = true; 
             return true;
+        }
 
         return false;
+    }
+
+    protected void RunAtPlayer(float speed)
+    {
+        var normalizedDirection = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
+        
+        rb.MovePosition(rb.position + normalizedDirection * speed * Time.fixedDeltaTime);
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)

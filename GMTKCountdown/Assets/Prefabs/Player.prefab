@@ -102,8 +102,6 @@ MonoBehaviour:
   fireRate: 1
   bullet: {fileID: 1740409709549398360, guid: 46110266ac0af4e4f9506b7c617e1655, type: 3}
   bulletSpawn: {fileID: 8787997209284285653}
-  player: {fileID: 6480221152798561691}
-  rotationSpeed: 10
 --- !u!1 &2198254311784382394
 GameObject:
   m_ObjectHideFlags: 0
