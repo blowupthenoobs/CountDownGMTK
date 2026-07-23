@@ -58,8 +58,8 @@ public abstract class EnemyScript : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + (new Vector2(Mathf.Cos(attackDirection), Mathf.Sin(attackDirection)) * range / 2), new Vector2(range, attackWidth), attackDirection, Vector2.zero, 0f, playerLayer);
         // Debug.
 
-        if(hit.collider.gameObject == target)
-            target.SendMessage("TakeDamage", damage);
+        if(hit)
+            hit.collider.gameObject.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
 
         // Debug.Log(hit.transform);
     }
