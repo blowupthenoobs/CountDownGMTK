@@ -6,7 +6,8 @@ public class MeleeExecutive : EnemyScript
 {
     private bool seesPlayer;
     private bool attacking;
-    
+    [SerializeField] Vector2 attackSize;
+
     void Start()
     {
         
@@ -20,5 +21,7 @@ public class MeleeExecutive : EnemyScript
     {
         if(CanSeePlayer())
             RunAtPlayer(defaultMoveSpeed);   
+        
+        MeleeAttack(attackSize, lastSeenPlayerPosition - transform.position, 5);
     }
 }

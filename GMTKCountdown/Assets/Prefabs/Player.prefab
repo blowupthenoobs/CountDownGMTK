@@ -26,14 +26,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961597664535107480}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1140239, y: 0.037241224, z: -0.07069088}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.2, z: -0.07069088}
   m_LocalScale: {x: 0.78954154, y: 0.05742121, z: 0.382808}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8787997209284285653}
   m_Father: {fileID: 226001506433884833}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &6092145417480490468
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   fireRate: 1
   bullet: {fileID: 1740409709549398360, guid: 46110266ac0af4e4f9506b7c617e1655, type: 3}
   bulletSpawn: {fileID: 8787997209284285653}
-  rotationPoint: {fileID: 0}
+  rotationPoint: {fileID: 226001506433884833}
 --- !u!1 &2198254311784382394
 GameObject:
   m_ObjectHideFlags: 0

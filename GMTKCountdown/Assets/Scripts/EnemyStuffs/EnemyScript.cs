@@ -8,6 +8,7 @@ public abstract class EnemyScript : MonoBehaviour
 
     protected GameObject target;
     [SerializeField] protected LayerMask raycastLayers;
+    [SerializeField] protected LayerMask playerLayer;
     protected Vector3 lastSeenPlayerPosition; 
     protected bool sawPlayerLastFrame;
 
@@ -47,7 +48,7 @@ public abstract class EnemyScript : MonoBehaviour
 
     protected void MeleeAttack(Vector2 size, Vector2 attackDirection, float attackRange)
     {
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, size, 0f, attackDirection, attackRange);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, size, 0f, attackDirection, attackRange, playerLayer);
         // Debug.
 
         Debug.Log(hit.transform);
