@@ -45,6 +45,14 @@ public abstract class EnemyScript : MonoBehaviour
         rb.MovePosition(rb.position + normalizedDirection * speed * Time.fixedDeltaTime);
     }
 
+    protected void MeleeAttack(Vector2 size, Vector2 attackDirection, float attackRange)
+    {
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, size, 0f, attackDirection, attackRange);
+        // Debug.
+
+        Debug.Log(hit.transform);
+    }
+
     protected void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")

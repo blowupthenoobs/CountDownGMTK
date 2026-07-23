@@ -5,6 +5,8 @@ using UnityEngine;
 public class MeleeExecutive : EnemyScript
 {
     private bool seesPlayer;
+    private bool attacking;
+    
     void Start()
     {
         
@@ -12,13 +14,11 @@ public class MeleeExecutive : EnemyScript
 
     void Update()
     {
-        seesPlayer = CanSeePlayer();
-        // Debug.Log(CanSeePlayer());
     }
 
     void FixedUpdate()
     {
-        if(seesPlayer)
+        if(CanSeePlayer())
             RunAtPlayer(defaultMoveSpeed);   
     }
 }
