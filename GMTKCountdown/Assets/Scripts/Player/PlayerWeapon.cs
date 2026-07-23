@@ -18,6 +18,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] Sprite[] weaponSprites;
     SpriteRenderer spriteRenderer;
 
+    public BulletSpawnPoint bulletSpawnPoint;
+
     void Update()
     {
         SwitchIDValues();
@@ -58,14 +60,16 @@ public class PlayerWeapon : MonoBehaviour
 
         if(ID == 0)
         {
-
+            spriteRenderer.sprite = null;
         }
         if(ID == 1)
         {
-
+            spriteRenderer.sprite = null;
+            //tbadded
         }
         if(ID == 2)
         {
+            bulletSpawnPoint.GoToPos(-0.315f, 1.426f);
             fireRate = 0.5f;
             spriteRenderer.sprite = weaponSprites[0];
 
@@ -76,6 +80,7 @@ public class PlayerWeapon : MonoBehaviour
         }
         if(ID == 3)
         {
+            bulletSpawnPoint.GoToPos(-0.348f, 1.63f);
             fireRate = 0.85f;
             spriteRenderer.sprite = weaponSprites[1];
 
@@ -86,6 +91,7 @@ public class PlayerWeapon : MonoBehaviour
         }
         if (ID == 4)
         {
+            bulletSpawnPoint.GoToPos(-0.16f, 1.89f);
             fireRate = 1f;
             spriteRenderer.sprite = weaponSprites[2];
 
