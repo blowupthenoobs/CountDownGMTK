@@ -13,7 +13,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] Transform bulletSpawn;
 
     [SerializeField] Transform rotationPoint;
-    public bool requestedToShoot;
+    bool requestedToShoot;
 
     void Update()
     {
@@ -72,7 +72,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             fireRate = 0.85f;
 
-            if (requestedToShoot)
+            if(requestedToShoot)
             {
                 Instantiate(bullets[1], bulletSpawn.position, bulletSpawn.rotation);
             }
@@ -81,7 +81,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             fireRate = 1f;
 
-            if (requestedToShoot)
+            if(requestedToShoot)
             {
                 Instantiate(bullets[2], bulletSpawn.position, bulletSpawn.rotation);
             }
