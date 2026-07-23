@@ -9,10 +9,11 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] float fireRate;
     float timeBetweenShots;
 
-    [SerializeField] GameObject bullet;
+    [SerializeField] GameObject[] bullets;
     [SerializeField] Transform bulletSpawn;
 
     [SerializeField] Transform rotationPoint;
+    public bool requestedToShoot;
 
     void Update()
     {
@@ -29,9 +30,13 @@ public class PlayerWeapon : MonoBehaviour
         {
             if (fireRate <= timeBetweenShots)
             {
-                Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+                requestedToShoot = true;
                 timeBetweenShots = 0;
             }
+        }
+        else
+        {
+            requestedToShoot = false;
         }
     }
 
@@ -57,14 +62,29 @@ public class PlayerWeapon : MonoBehaviour
         if(ID == 2)
         {
             fireRate = 0.5f;
+
+            if(requestedToShoot)
+            {
+                Instantiate(bullets[0], bulletSpawn.position, bulletSpawn.rotation);
+            }
         }
         if(ID == 3)
         {
             fireRate = 0.85f;
+
+            if (requestedToShoot)
+            {
+                Instantiate(bullets[1], bulletSpawn.position, bulletSpawn.rotation);
+            }
         }
         if (ID == 4)
         {
             fireRate = 1f;
+
+            if (requestedToShoot)
+            {
+                Instantiate(bullets[2], bulletSpawn.position, bulletSpawn.rotation);
+            }
         }
     }
 }
