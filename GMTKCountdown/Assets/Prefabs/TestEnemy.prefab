@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6725601043337612401}
   m_Layer: 0
   m_Name: TestEnemy
-  m_TagString: Untagged
+  m_TagString: EnemyDontCollide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,10 +107,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   defaultMoveSpeed: 1
-  attackRange: 4
+  attackRange: 2
   damage: 2
   attackWidth: 0.8
-  minDistToAttack: 1.5
+  minDistToAttack: 3
   timeBetweenAttacks: 0.2
   timeAfterAttacks: 0.5
   lungePower: 2
