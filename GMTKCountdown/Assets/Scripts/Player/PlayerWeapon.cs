@@ -20,6 +20,11 @@ public class PlayerWeapon : MonoBehaviour
 
     public BulletSpawnPoint bulletSpawnPoint;
 
+    [SerializeField] bool isMelee;
+    bool isInRange;
+
+    RaycastHit2D boxRaycastHit;
+
     void Update()
     {
         SwitchIDValues();
@@ -38,6 +43,11 @@ public class PlayerWeapon : MonoBehaviour
                 requestedToShoot = true;
                 timeBetweenShots = 0;
             }
+
+            if(isMelee)
+            {
+               Melee();
+            }
         }
         else
         {
@@ -54,6 +64,11 @@ public class PlayerWeapon : MonoBehaviour
         rotationPoint.transform.up = direction;
     }
 
+    void Melee()
+    {
+        
+    }
+
     void SwitchIDValues()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -64,14 +79,14 @@ public class PlayerWeapon : MonoBehaviour
         }
         if(ID == 1)
         {
-            spriteRenderer.sprite = null;
+            spriteRenderer.sprite = weaponSprites[0];
             //tbadded
         }
         if(ID == 2)
         {
             bulletSpawnPoint.GoToPos(-0.315f, 1.426f);
             fireRate = 0.5f;
-            spriteRenderer.sprite = weaponSprites[0];
+            spriteRenderer.sprite = weaponSprites[1];
 
             if(requestedToShoot)
             {
@@ -82,7 +97,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             bulletSpawnPoint.GoToPos(-0.348f, 1.63f);
             fireRate = 0.85f;
-            spriteRenderer.sprite = weaponSprites[1];
+            spriteRenderer.sprite = weaponSprites[2];
 
             if(requestedToShoot)
             {
@@ -93,12 +108,24 @@ public class PlayerWeapon : MonoBehaviour
         {
             bulletSpawnPoint.GoToPos(-0.16f, 1.89f);
             fireRate = 1f;
-            spriteRenderer.sprite = weaponSprites[2];
+            spriteRenderer.sprite = weaponSprites[3];
 
             if (requestedToShoot)
             {
                 Instantiate(bullets[2], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            isInRange = true;
+        }
+        else
+        {
+            isInRange = false;
         }
     }
 }
