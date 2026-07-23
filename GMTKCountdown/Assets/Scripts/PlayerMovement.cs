@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject currentWeapon;
 
     public GameObject weaponPlayerIsOver;
+    public bool hasPickedUpItem;
     
     void Awake()
     {
@@ -25,14 +26,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         Weapon weapon = weaponPlayerIsOver.GetComponent<Weapon>();
 
         if ((Input.GetKeyDown(KeyCode.E)) && weapon.canPickup)
         {
             currentWeapon = weaponPlayerIsOver;
             Instantiate(weaponPlayerIsOver, weaponsSpawn.position, weaponsSpawn.rotation, weaponsSpawn.transform);
-            Debug.Log("Worked");
+            hasPickedUpItem = true;
+        }
+
+        if((Input.GetKeyDown(KeyCode.Q)) && currentWeapon != null)
+        {
+            Instantiate(currentWeapon, transform.position, weaponsSpawn.transform.rotation);
         }
     }
 

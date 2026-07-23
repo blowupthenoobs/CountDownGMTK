@@ -31,12 +31,19 @@ public class Weapon : MonoBehaviour
         if(isInRange)
         {
             canPickup = true;
-            Debug.Log("Can Pick Up" + player.weaponPlayerIsOver);
         }
         if(!isInRange)
         {
             canPickup = false;
-            Debug.Log("Can't Pick Up" + player.weaponPlayerIsOver);
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && player.hasPickedUpItem)
+        {
+            player.hasPickedUpItem = false;
+            Destroy(gameObject);
         }
     }
 
