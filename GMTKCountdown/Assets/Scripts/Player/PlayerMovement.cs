@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(WeaponItems[weaponIDCurrent - 1], transform.position, transform.rotation);
             currentWeapon = null;
             weaponIDCurrent = 0;
+            weapon.GetComponent<PlayerWeapon>().ID = weaponIDCurrent;
         }
     }
 

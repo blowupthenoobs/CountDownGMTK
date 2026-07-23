@@ -8,6 +8,7 @@ TagManager:
   - NodeY
   - Weapon
   - Enemy
+  - WeaponSpawnPoint
   layers:
   - Default
   - TransparentFX

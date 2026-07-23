@@ -10,10 +10,15 @@ public class PlayerWeapon : MonoBehaviour
     float timeBetweenShots;
 
     [SerializeField] GameObject[] bullets;
-    [SerializeField] Transform bulletSpawn;
+    [SerializeField] GameObject bulletSpawn;
 
     [SerializeField] Transform rotationPoint;
     bool requestedToShoot;
+
+    [SerializeField] Sprite[] weaponSprites;
+    SpriteRenderer spriteRenderer;
+
+    public BulletSpawnPoint bulletSpawnPoint;
 
     void Update()
     {
@@ -51,39 +56,48 @@ public class PlayerWeapon : MonoBehaviour
 
     void SwitchIDValues()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         if(ID == 0)
         {
-
+            spriteRenderer.sprite = null;
         }
         if(ID == 1)
         {
-
+            spriteRenderer.sprite = null;
+            //tbadded
         }
         if(ID == 2)
         {
+            bulletSpawnPoint.GoToPos(-0.315f, 1.426f);
             fireRate = 0.5f;
+            spriteRenderer.sprite = weaponSprites[0];
 
             if(requestedToShoot)
             {
-                Instantiate(bullets[0], bulletSpawn.position, bulletSpawn.rotation);
+                Instantiate(bullets[0], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
         }
         if(ID == 3)
         {
+            bulletSpawnPoint.GoToPos(-0.348f, 1.63f);
             fireRate = 0.85f;
+            spriteRenderer.sprite = weaponSprites[1];
 
             if(requestedToShoot)
             {
-                Instantiate(bullets[1], bulletSpawn.position, bulletSpawn.rotation);
+                Instantiate(bullets[1], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
         }
         if (ID == 4)
         {
+            bulletSpawnPoint.GoToPos(-0.16f, 1.89f);
             fireRate = 1f;
+            spriteRenderer.sprite = weaponSprites[2];
 
-            if(requestedToShoot)
+            if (requestedToShoot)
             {
-                Instantiate(bullets[2], bulletSpawn.position, bulletSpawn.rotation);
+                Instantiate(bullets[2], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
         }
     }
