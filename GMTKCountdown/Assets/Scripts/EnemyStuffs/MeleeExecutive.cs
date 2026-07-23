@@ -46,14 +46,12 @@ public class MeleeExecutive : EnemyScript
 
         Lunge(direction, 5);
         yield return new WaitForSeconds(timeBetweenAttacks);
+        rb.velocity = new Vector2();
         MeleeAttack(attackRange, 1f, Mathf.Atan2(direction.y, direction.x));
-        // Debug.Log("attack 1");
         yield return new WaitForSeconds(timeBetweenAttacks);
         MeleeAttack(attackRange, 1f, Mathf.Atan2(direction.y, direction.x));
-        // Debug.Log("attack 2");
         yield return new WaitForSeconds(timeBetweenAttacks);
         MeleeAttack(attackRange, 1f, Mathf.Atan2(direction.y, direction.x));
-        // Debug.Log("attack 3");
         yield return new WaitForSeconds(timeAfterAttacks);
         attacking = false;
     }
