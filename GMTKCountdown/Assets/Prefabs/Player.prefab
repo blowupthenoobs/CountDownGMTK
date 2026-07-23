@@ -111,7 +111,6 @@ MonoBehaviour:
   - {fileID: 4291322055174538613, guid: cc7b9bea35b466e4fb807e89fcc382b2, type: 3}
   - {fileID: 7343619722040212441, guid: 5ac7001d6750763449087651a1344f3c, type: 3}
   bulletSpawnPoint: {fileID: 6671112867723322930}
-  isMelee: 0
 --- !u!1 &2198254311784382394
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +438,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
