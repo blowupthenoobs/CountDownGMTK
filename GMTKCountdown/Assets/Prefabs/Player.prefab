@@ -111,7 +111,12 @@ MonoBehaviour:
   - {fileID: 4291322055174538613, guid: cc7b9bea35b466e4fb807e89fcc382b2, type: 3}
   - {fileID: 7343619722040212441, guid: 5ac7001d6750763449087651a1344f3c, type: 3}
   bulletSpawnPoint: {fileID: 6671112867723322930}
-  isMelee: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastSize: {x: 1.93, y: 2.15}
+  isMeleeWeapon: 0
+  isInRange: 0
 --- !u!1 &2198254311784382394
 GameObject:
   m_ObjectHideFlags: 0
