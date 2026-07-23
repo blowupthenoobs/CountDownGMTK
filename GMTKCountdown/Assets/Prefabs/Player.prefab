@@ -106,10 +106,12 @@ MonoBehaviour:
   bulletSpawn: {fileID: 6029461529211880520}
   rotationPoint: {fileID: 226001506433884833}
   weaponSprites:
+  - {fileID: -3959064039333041757, guid: f3ba6177cc5b4194dae8fd92cd5c0782, type: 3}
   - {fileID: -3871973405746143310, guid: d8ebdceeff537304c91a10d591b81524, type: 3}
   - {fileID: 4291322055174538613, guid: cc7b9bea35b466e4fb807e89fcc382b2, type: 3}
   - {fileID: 7343619722040212441, guid: 5ac7001d6750763449087651a1344f3c, type: 3}
   bulletSpawnPoint: {fileID: 6671112867723322930}
+  isMelee: 0
 --- !u!1 &2198254311784382394
 GameObject:
   m_ObjectHideFlags: 0
