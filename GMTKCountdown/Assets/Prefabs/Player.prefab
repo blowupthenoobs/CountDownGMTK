@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1961597664535107480}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7740239, y: 0.03724122, z: -0.07069088}
-  m_LocalScale: {x: 0.7895415, y: 0.057421204, z: 0.382808}
+  m_LocalPosition: {x: 1.1140239, y: 0.037241224, z: -0.07069088}
+  m_LocalScale: {x: 0.78954154, y: 0.05742121, z: 0.382808}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8787997209284285653}
@@ -102,6 +102,7 @@ MonoBehaviour:
   fireRate: 1
   bullet: {fileID: 1740409709549398360, guid: 46110266ac0af4e4f9506b7c617e1655, type: 3}
   bulletSpawn: {fileID: 8787997209284285653}
+  rotationPoint: {fileID: 0}
 --- !u!1 &2198254311784382394
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 2198254311784382394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.66, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -12,10 +12,13 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] Transform bulletSpawn;
 
+    [SerializeField] Transform rotationPoint;
+
     void Update()
     {
         SwitchIDValues();
         FireRate();
+        Rotate();
     }
 
     void FireRate()
@@ -30,6 +33,15 @@ public class PlayerWeapon : MonoBehaviour
                 timeBetweenShots = 0;
             }
         }
+    }
+
+    void Rotate()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        Vector2 direction = new Vector2(mousePos.x - rotationPoint.position.x, mousePos.y - rotationPoint.position.y).normalized;
+        rotationPoint.transform.up = direction;
     }
 
     void SwitchIDValues()
