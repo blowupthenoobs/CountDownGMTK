@@ -10,10 +10,13 @@ public class PlayerWeapon : MonoBehaviour
     float timeBetweenShots;
 
     [SerializeField] GameObject[] bullets;
-    [SerializeField] Transform bulletSpawn;
+    [SerializeField] GameObject bulletSpawn;
 
     [SerializeField] Transform rotationPoint;
     bool requestedToShoot;
+
+    [SerializeField] Sprite[] weaponSprites;
+    SpriteRenderer spriteRenderer;
 
     void Update()
     {
@@ -51,6 +54,8 @@ public class PlayerWeapon : MonoBehaviour
 
     void SwitchIDValues()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         if(ID == 0)
         {
 
@@ -62,28 +67,31 @@ public class PlayerWeapon : MonoBehaviour
         if(ID == 2)
         {
             fireRate = 0.5f;
+            spriteRenderer.sprite = weaponSprites[0];
 
             if(requestedToShoot)
             {
-                Instantiate(bullets[0], bulletSpawn.position, bulletSpawn.rotation);
+                Instantiate(bullets[0], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
         }
         if(ID == 3)
         {
             fireRate = 0.85f;
+            spriteRenderer.sprite = weaponSprites[1];
 
             if(requestedToShoot)
             {
-                Instantiate(bullets[1], bulletSpawn.position, bulletSpawn.rotation);
+                Instantiate(bullets[1], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
         }
         if (ID == 4)
         {
             fireRate = 1f;
+            spriteRenderer.sprite = weaponSprites[2];
 
-            if(requestedToShoot)
+            if (requestedToShoot)
             {
-                Instantiate(bullets[2], bulletSpawn.position, bulletSpawn.rotation);
+                Instantiate(bullets[2], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
         }
     }
