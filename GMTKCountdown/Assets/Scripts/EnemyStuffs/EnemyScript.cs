@@ -12,6 +12,7 @@ public abstract class EnemyScript : MonoBehaviour
     protected Vector3 lastSeenPlayerPosition; 
     protected bool sawPlayerLastFrame;
 
+    [SerializeField] protected int health;
     [SerializeField] protected float defaultMoveSpeed;
     [SerializeField] protected float attackRange;
     [SerializeField] float damage;
@@ -68,11 +69,27 @@ public abstract class EnemyScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
             target = collision.gameObject;
+        // else
+        //     Debug.Log("collided with non-player");
     }
 
     protected void OnTriggerExit2D(Collider2D collision)
     {
         if(target == collision.gameObject)
             target = null;
+    }
+
+    public void RecieveDamage(int damage)
+    {
+        // Debug.Log("took " + damage.ToString() + " damage");
+        health -= damage;
+
+        if(health <= 0)
+            Death();
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 }

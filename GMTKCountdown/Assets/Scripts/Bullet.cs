@@ -31,6 +31,9 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.CompareTag("EnemyCollide"))
+            other.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
+
         if(other.GetComponent<Rigidbody2D>() && !other.CompareTag("Bullet") && !other.CompareTag("EnemyDontCollide"))
         {
             Debug.Log(other);
