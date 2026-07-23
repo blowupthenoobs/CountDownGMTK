@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
@@ -23,8 +24,25 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] Vector2 raycastSize;
 
+    [SerializeField] int currentAmmo;
+    [SerializeField] int amountOfAmmoToRemove;
+
+    [SerializeField] int maxAmmo;
+
+    [SerializeField] float timeToReload;
+    public float timeBetweenReload;
+
     bool isMeleeWeapon;
     bool isInRange;
+    bool canShoot;
+
+    PlayerMovement playerMovement;
+    bool reloadClicked;
+
+    void Start()
+    {
+        playerMovement = FindAnyObjectByType<PlayerMovement>();
+    }
 
     void Update()
     {
@@ -32,23 +50,63 @@ public class PlayerWeapon : MonoBehaviour
         FireRate();
         Rotate();
         Melee();
+        Reload();
     }
 
     void FireRate()
     {
         timeBetweenShots += Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0))
+        if ((Input.GetMouseButtonDown(0)) && canShoot)
         {
             if (fireRate <= timeBetweenShots)
             {
                 requestedToShoot = true;
+                currentAmmo -= amountOfAmmoToRemove;
                 timeBetweenShots = 0;
             }
         }
         else
         {
             requestedToShoot = false;
+        }
+    }
+
+    void Reload()
+    { 
+        if(currentAmmo <= 0)
+        {
+            currentAmmo = 0;
+            canShoot = false;
+        }
+        else
+        {
+            canShoot = true;
+        }
+
+        if(reloadClicked)
+        {
+           timeBetweenReload += Time.deltaTime;
+           canShoot = false;
+        }
+        if(timeBetweenReload >= timeToReload)
+        {
+            reloadClicked = false;
+            canShoot = true;
+
+            currentAmmo = maxAmmo;
+            timeBetweenReload = 0;
+        }
+
+        if ((Input.GetKeyDown(KeyCode.R)) && currentAmmo < maxAmmo)
+        {
+            reloadClicked = true;
+        }
+
+        if(playerMovement.newItem)
+        {
+            currentAmmo = maxAmmo;
+            playerMovement.newItem = false;
         }
     }
 
@@ -90,10 +148,15 @@ public class PlayerWeapon : MonoBehaviour
         {
             bulletSpawnPoint.GoToPos(-0.315f, 1.426f);
             fireRate = 0.5f;
+
             spriteRenderer.sprite = weaponSprites[1];
             isMeleeWeapon = false;
 
-            if(requestedToShoot)
+            maxAmmo = 6;
+            amountOfAmmoToRemove = 1;
+            timeToReload = 0.7f;
+
+            if (requestedToShoot)
             {
                 Instantiate(bullets[0], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
@@ -102,8 +165,13 @@ public class PlayerWeapon : MonoBehaviour
         {
             bulletSpawnPoint.GoToPos(-0.348f, 1.63f);
             fireRate = 0.85f;
+
             spriteRenderer.sprite = weaponSprites[2];
             isMeleeWeapon = false;
+
+            maxAmmo = 20;
+            amountOfAmmoToRemove = 10;
+            timeToReload = 0.85f;
 
             if (requestedToShoot)
             {
@@ -117,8 +185,13 @@ public class PlayerWeapon : MonoBehaviour
         {
             bulletSpawnPoint.GoToPos(-0.16f, 1.89f);
             fireRate = 1f;
+
             spriteRenderer.sprite = weaponSprites[3];
             isMeleeWeapon = false;
+
+            maxAmmo = 10;
+            amountOfAmmoToRemove = 1;
+            timeToReload = 0.65f;
 
             if (requestedToShoot)
             {

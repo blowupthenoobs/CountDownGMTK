@@ -24,10 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject[] WeaponItems;
     public GameObject weapon;
+
+    [HideInInspector] public bool newItem;
     
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+
         weaponIDCurrent = 0;
         //0 = fists
         //1 = sword
@@ -55,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy(weaponPlayerIsOver);
             hasPickedUpItem = true;
             weaponPlayerIsOver = null;
+            newItem = true;
         }
 
         if((Input.GetKeyDown(KeyCode.Q)) && weaponIDCurrent != 0)
