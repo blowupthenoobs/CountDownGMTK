@@ -48,6 +48,8 @@ MonoBehaviour:
   rotationPoint: {fileID: 226001506433884833}
   gunSpot: {fileID: 7737069044142459845}
   heldWeapon: {fileID: 0}
+  data: {fileID: 0}
+  ammoText: {fileID: 0}
 --- !u!1 &2744232688062297207
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,11 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  currentWeapon: {fileID: 0}
-  weaponIDCurrent: 0
   weaponControlScript: {fileID: 5316292237549406020}
   weaponPlayerIsOver: {fileID: 0}
-  hasPickedUpItem: 0
   WeaponItems:
   - {fileID: 7039902834799487547, guid: c935df3e8ce994a56bd56e34236eb263, type: 3}
   - {fileID: 1689624241021896480, guid: 2c50bec3d7690466fbcd4ce074fd6bdf, type: 3}
@@ -143,6 +142,7 @@ MonoBehaviour:
   - {fileID: 4113396297813687897, guid: ed1216646ae2548c1b4cedf9ae844c4e, type: 3}
   weapon: {fileID: 0}
   newItem: 0
+  pickUpText: {fileID: 0}
 --- !u!61 &4605864543323390174
 BoxCollider2D:
   m_ObjectHideFlags: 0
