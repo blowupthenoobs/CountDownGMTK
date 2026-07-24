@@ -13,6 +13,7 @@ public class SpinnyChairEnemy : EnemyScript
     [SerializeField] float minProjectileSpeed, maxProjectileSpeed;
     [SerializeField] float minOrbitRange, maxOrbitRange, orbitSpeed;
     [SerializeField] float movementModeDuration;
+    [SerializeField] float minWallDist;
     [SerializeField] float dashSpeed;
     private float currentModeDuration;
     private int currentMode = -1;
@@ -57,8 +58,8 @@ public class SpinnyChairEnemy : EnemyScript
     private IEnumerator Moving()
     {
         rb.velocity = new Vector2();
-        currentMode = Random.Range(0, 3); //0 - orbit, 1 - dash, 2 - dash backwards
-        Debug.Log(currentMode);
+        currentMode = Random.Range(0, 3); //0 - orbit, 1 - dash, 2 - dash backwards //Temp took out orbit cuz it was being kinda wonky
+        // Debug.Log(currentMode);
 
         if(currentMode == 0)
         {
@@ -68,10 +69,11 @@ public class SpinnyChairEnemy : EnemyScript
             else
             {
                 currentModeDuration = 0;
-                while(currentModeDuration < movementModeDuration || (transform.position - target.transform.position).magnitude <= minOrbitRange || maxOrbitRange <= (transform.position - target.transform.position).magnitude || target == null)
+                while((currentModeDuration < movementModeDuration || (transform.position - target.transform.position).magnitude <= minOrbitRange || maxOrbitRange <= (transform.position - target.transform.position).magnitude) && target != null)
                 {
-                    Debug.Log("called orbit");
-                    OrbitPlayer((transform.position - target.transform.position).magnitude, orbitSpeed);
+                    // Debug.Log("called orbit");
+                    if(target != null)
+                        OrbitPlayer((transform.position - target.transform.position).magnitude, orbitSpeed);
                     currentModeDuration += Time.fixedDeltaTime;
                     yield return null;
                 }
@@ -81,14 +83,15 @@ public class SpinnyChairEnemy : EnemyScript
         }
         else if(currentMode == 1)
         {
-            var randomDegree = Random.Range(0, 360);
-            lastDashedDirection = new Vector2(Mathf.Cos(randomDegree * Mathf.Deg2Rad), Mathf.Sin(randomDegree * Mathf.Deg2Rad));
-            Lunge(lastDashedDirection, dashSpeed);
+            Lunge(lastDashedDirection, -dashSpeed);
+            lastDashedDirection *= -1;
             yield return new WaitForSeconds(movementModeDuration);
         }
         else
         {
-            Lunge(lastDashedDirection, -dashSpeed);
+            var randomDegree = Random.Range(0, 360);
+            lastDashedDirection = new Vector2(Mathf.Cos(randomDegree * Mathf.Deg2Rad), Mathf.Sin(randomDegree * Mathf.Deg2Rad));
+            Lunge(lastDashedDirection, dashSpeed);
             yield return new WaitForSeconds(movementModeDuration);
         }
 
