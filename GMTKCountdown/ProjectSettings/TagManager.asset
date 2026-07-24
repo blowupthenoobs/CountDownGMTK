@@ -15,6 +15,7 @@ TagManager:
   - EnemyDontCollide
   - Crate
   - Wall
+  - DamageCollider
   layers:
   - Default
   - TransparentFX

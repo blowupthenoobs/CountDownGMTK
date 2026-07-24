@@ -13,7 +13,7 @@ public abstract class EnemyScript : MonoBehaviour
     protected Vector3 lastSeenPlayerPosition; 
     protected bool sawPlayerLastFrame;
 
-    [SerializeField] protected int health;
+    [SerializeField] public int health;
     [SerializeField] protected float defaultMoveSpeed;
     [SerializeField] protected float attackRange;
     [SerializeField] float damage;
