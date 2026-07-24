@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5788524591369060765}
   - component: {fileID: 7735886783429372039}
   - component: {fileID: 8327884703550588549}
-  - component: {fileID: 5593351056445144984}
+  - component: {fileID: 1450883795125230459}
   m_Layer: 0
   m_Name: RevolverItem
   m_TagString: Weapon
@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 4.25, y: 3.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1706745135961933477}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.644}
 --- !u!212 &7735886783429372039
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.53846157, y: -0.375}
-    oldSize: {x: 0.43333334, y: 0.26666668}
+    oldSize: {x: 0.65, y: 0.4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -131,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5593351056445144984
+--- !u!114 &1450883795125230459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +141,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1689624241021896480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1e5df2ab17264c95af72c904597930f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c0b945cf9ef0d84a82c9a2fff668992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
+  data: {fileID: 0}
+  bullet: {fileID: 1740409709549398360, guid: 06458bab0146a694a91c42e22e8aa3ff, type: 3}
+  barrelEnd: {fileID: 7819616389485117502}
+--- !u!1 &7819616389485117502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706745135961933477}
+  m_Layer: 0
+  m_Name: BarrelEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706745135961933477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819616389485117502}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.314, y: 0.521, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5788524591369060765}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}

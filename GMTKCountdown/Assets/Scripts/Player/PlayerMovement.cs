@@ -15,9 +15,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
 
-    [SerializeField] Transform weaponsSpawn;
     public GameObject currentWeapon;
     public int weaponIDCurrent;
+    [SerializeField] WeaponControlScript weaponControlScript;
 
     public GameObject weaponPlayerIsOver;
     public bool hasPickedUpItem;
@@ -48,25 +48,29 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E) && weaponPlayerIsOver != null)
         {
-            if(weaponIDCurrent != 0)
-            {
-                Instantiate(WeaponItems[weaponIDCurrent - 1], transform.position, transform.rotation);
-            }
-            currentWeapon = weaponPlayerIsOver;
-            weaponIDCurrent = currentWeapon.GetComponent<WeaponItem>().ID;
-            weapon.GetComponent<PlayerWeapon>().ID = weaponIDCurrent;
-            Destroy(weaponPlayerIsOver);
-            hasPickedUpItem = true;
-            weaponPlayerIsOver = null;
-            newItem = true;
+            // if(weaponIDCurrent != 0)
+            // {
+            //     Instantiate(WeaponItems[weaponIDCurrent - 1], transform.position, transform.rotation);
+            // }
+            // currentWeapon = weaponPlayerIsOver;
+            // weaponIDCurrent = currentWeapon.GetComponent<WeaponItem>().ID;
+            // weapon.GetComponent<PlayerWeapon>().ID = weaponIDCurrent;
+            // Destroy(weaponPlayerIsOver);
+            // hasPickedUpItem = true;
+            // weaponPlayerIsOver = null;
+            // newItem = true;
+
+            weaponControlScript.PickUpWeapon(weaponPlayerIsOver);
         }
 
         if((Input.GetKeyDown(KeyCode.Q)) && weaponIDCurrent != 0)
         {
-            Instantiate(WeaponItems[weaponIDCurrent - 1], transform.position, transform.rotation);
-            currentWeapon = null;
-            weaponIDCurrent = 0;
-            weapon.GetComponent<PlayerWeapon>().ID = weaponIDCurrent;
+            // Instantiate(WeaponItems[weaponIDCurrent - 1], transform.position, transform.rotation);
+            // currentWeapon = null;
+            // weaponIDCurrent = 0;
+            // weapon.GetComponent<PlayerWeapon>().ID = weaponIDCurrent;
+
+            weaponControlScript.DropWeapon();
         }
     }
 
@@ -90,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "Weapon")
+        if(other.gameObject == weaponPlayerIsOver)
         {
             weaponPlayerIsOver = null;
         }
