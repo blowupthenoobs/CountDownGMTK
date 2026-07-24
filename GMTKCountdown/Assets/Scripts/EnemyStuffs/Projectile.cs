@@ -10,14 +10,15 @@ public class Projectile : MonoBehaviour
     PlayerHealth playerHealth;
 
     [SerializeField] int damage;
+    Transform player;
+
     Vector2 direction;
 
     // Start is called before the first frame update
     void Awake()
     {
-        rangeEnemy = FindFirstObjectByType<RangeEnemy>();
         playerHealth = FindFirstObjectByType<PlayerHealth>();
-        rangeEnemy.player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 
         Direction();
     }
@@ -29,7 +30,7 @@ public class Projectile : MonoBehaviour
 
     void Direction()
     {
-        direction = (rangeEnemy.player.position - transform.position).normalized;
+        direction = (player.position - transform.position).normalized;
     }
     void Movement()
     {
