@@ -7,7 +7,8 @@ public class SwordScript : GunScript
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] Vector2 raycastSize;
 
-    [SerializeField] GameObject damageCollider;
+    [SerializeField] float damage;
+    bool canHit;
 
     public override void Shoot()
     {
@@ -15,8 +16,7 @@ public class SwordScript : GunScript
 
         if ((Input.GetMouseButtonDown(0)) && hit)
         {
-            Debug.Log("SpawnedCollider");
-            Instantiate(damageCollider, transform.position, transform.rotation);
+            hit.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
         }
     }
 
@@ -33,5 +33,10 @@ public class SwordScript : GunScript
         if(data.cooldownTime <= currentWait)
             return true;
         return false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position, raycastSize);
     }
 }

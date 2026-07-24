@@ -6,7 +6,7 @@ using UnityEngine;
 public class DamageCollider : MonoBehaviour
 {
     [SerializeField] int swordDamage;
-    EnemyScript enemyScript;
+    EnemyHitBoxScript enemyHitBoxScript;
 
     // Start is called before the first frame update
     void Start()
@@ -22,16 +22,15 @@ public class DamageCollider : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Enemy"))
+        if(other.CompareTag("EnemyCollide"))
         {
             Debug.Log("Collided");
-            enemyScript = other.GetComponentInParent<EnemyScript>();
+            enemyHitBoxScript = other.GetComponentInParent<EnemyHitBoxScript>();
 
-            if(enemyScript != null )
+            if(enemyHitBoxScript != null)
             {
-                enemyScript.RecieveDamage(swordDamage);
+                enemyHitBoxScript.RecieveDamage(swordDamage);
                 // Debug.Log("Enemy Health:" + enemyScript.health);
-
             }
             else
             {
