@@ -6,14 +6,22 @@ public class SwordScript : GunScript
 {
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] Vector2 raycastSize;
+
+    public int swordDamage;
+    EnemyScript enemyScript;
     
     public override void Shoot()
     {
         var hit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
 
-        if (hit)
+        if((Input.GetMouseButtonDown(0)) && hit)
         {
-            Debug.Log("Did damage to enemy!");
+            enemyScript = hit.GetComponent<EnemyScript>();
+
+            if(enemyScript != null )
+            {
+               enemyScript.RecieveDamage(swordDamage);
+            }
         }
     }
 
