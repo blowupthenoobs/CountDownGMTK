@@ -30,7 +30,6 @@ public class DamageCollider : MonoBehaviour
             if(enemyScript != null )
             {
                 enemyScript.RecieveDamage(swordDamage);
-                Debug.Log("Enemy Health:" + enemyScript.health);
             }
             else
             {
