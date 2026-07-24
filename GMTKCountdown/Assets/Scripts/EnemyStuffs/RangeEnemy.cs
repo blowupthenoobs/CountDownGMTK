@@ -54,7 +54,7 @@ public class RangeEnemy : EnemyScript
 
         if(projectileFireRate <= timeBetweenSpawns && canShoot)
         {
-            Instantiate(projectile, transform.position, transform.rotation);
+            CastProjectile(projectile);
             timeBetweenSpawns = 0;
         }
         if(!canShoot)

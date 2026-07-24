@@ -65,6 +65,16 @@ public abstract class EnemyScript : MonoBehaviour
         // Debug.Log(hit.transform);
     }
 
+    protected void CastProjectile(GameObject projectile)
+    {
+        Instantiate(projectile, transform.position, transform.rotation);
+    }
+
+    protected void CastProjectile(GameObject projectile, Quaternion rotation)
+    {
+        Instantiate(projectile, transform.position, rotation);
+    }
+
     protected void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")

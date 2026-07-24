@@ -2,24 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeExecutive : EnemyScript
+public class SpinnyChairEnemy : EnemyScript
 {
     private bool attacking;
     [SerializeField] float attackWidth;
     [SerializeField] float minDistToAttack;
     [SerializeField] float timeBetweenAttacks;
     [SerializeField] float timeAfterAttacks;
-    [SerializeField] float lungePower;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     void FixedUpdate()
     {
