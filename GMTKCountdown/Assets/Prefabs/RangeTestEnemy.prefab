@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 4604128129332424354}
   - component: {fileID: 1471338459772303408}
   - component: {fileID: 674345660420502905}
+  - component: {fileID: 6089290438619099644}
   m_Layer: 0
   m_Name: RangeTestEnemy
   m_TagString: EnemyDontCollide
@@ -129,6 +130,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7345053848800142646}
+  - {fileID: 5187460958553838675}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4604128129332424354
@@ -245,3 +247,60 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
+--- !u!114 &6089290438619099644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317679583424352983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b73d9dc144c11c48948c36fcca4d984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastLayers:
+    serializedVersion: 2
+    m_Bits: 72
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  health: 0
+  defaultMoveSpeed: 0.6
+  attackRange: 4
+  damage: 1
+  projectile: {fileID: 2595906320510985066, guid: 8c15838d8cacfa341b6ae57ef8710912, type: 3}
+  projectileFireRate: 2
+  player: {fileID: 0}
+  canShoot: 1
+--- !u!1 &8279087801214937201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5187460958553838675}
+  m_Layer: 0
+  m_Name: ProjectileSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5187460958553838675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8279087801214937201}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: -0.019, y: -0.516, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7242952133561531848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}

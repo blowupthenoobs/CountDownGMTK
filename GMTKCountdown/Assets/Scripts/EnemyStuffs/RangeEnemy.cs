@@ -7,6 +7,7 @@ public class RangeEnemy : EnemyScript
     [SerializeField] GameObject projectile;
     [SerializeField] float projectileFireRate;
 
+    public Transform player;
     float timeBetweenSpawns;
 
     public bool canShoot;

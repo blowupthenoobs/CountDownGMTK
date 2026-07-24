@@ -5,8 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int health;
+    public int health;
     [SerializeField] Slider healthBar;
+
+    void Update()
+    {
+        healthBar.value = health;
+    }
 
     public void TakeDamage(int damage)
     {

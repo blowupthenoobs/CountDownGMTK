@@ -5,29 +5,42 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed;
-    [SerializeField] GameObject player;
 
-    List<Transform> playerObject = new List<Transform>();
+    RangeEnemy rangeEnemy;
+    PlayerHealth playerHealth;
+
+    [SerializeField] int damage;
+    Vector2 direction;
 
     // Start is called before the first frame update
     void Awake()
     {
-        playerObject.Add(playerObject[0]);
+        rangeEnemy = FindFirstObjectByType<RangeEnemy>();
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
+
+        Direction();
     }
 
     void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
         Movement();
     }
 
+    void Direction()
+    {
+        direction = (rangeEnemy.player.position - transform.position).normalized;
+    }
     void Movement()
     {
-        
+        transform.Translate(direction * speed * Time.deltaTime);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            playerHealth.health -= damage;
+            Destroy(gameObject);
+        }
     }
 }
