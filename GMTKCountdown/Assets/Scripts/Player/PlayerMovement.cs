@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -22,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject weapon;
 
     [HideInInspector] public bool newItem;
-    
+    [SerializeField] TextMeshProUGUI pickUpText;
+
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -33,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
         if(weaponPlayerIsOver != null)
         {
             weaponItem = weaponPlayerIsOver.GetComponent<WeaponItem>();
+            pickUpText.gameObject.SetActive(true);
+        }
+        if(weaponPlayerIsOver == null)
+        {
+            pickUpText.gameObject.SetActive(false);
         }
 
         if(Input.GetKeyDown(KeyCode.E) && weaponPlayerIsOver != null)
