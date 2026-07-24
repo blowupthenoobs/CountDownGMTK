@@ -7,12 +7,12 @@ public class Projectile : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] GameObject player;
 
-    PlayerMovement playerMovement;
+    List<Transform> playerObject = new List<Transform>();
 
     // Start is called before the first frame update
     void Awake()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+        playerObject.Add(playerObject[0]);
     }
 
     void Update()
