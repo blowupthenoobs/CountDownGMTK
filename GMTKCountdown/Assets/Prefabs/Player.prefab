@@ -49,7 +49,7 @@ MonoBehaviour:
   gunSpot: {fileID: 7737069044142459845}
   heldWeapon: {fileID: 0}
   data: {fileID: 0}
-  ammoText: {fileID: 0}
+  bulletCounter: {fileID: 0}
 --- !u!1 &2744232688062297207
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +142,6 @@ MonoBehaviour:
   - {fileID: 4113396297813687897, guid: ed1216646ae2548c1b4cedf9ae844c4e, type: 3}
   weapon: {fileID: 0}
   newItem: 0
-  pickUpText: {fileID: 0}
 --- !u!61 &4605864543323390174
 BoxCollider2D:
   m_ObjectHideFlags: 0

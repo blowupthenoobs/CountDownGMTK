@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject weapon;
 
     [HideInInspector] public bool newItem;
-    [SerializeField] TextMeshProUGUI pickUpText;
 
     void Awake()
     {
@@ -36,11 +35,6 @@ public class PlayerMovement : MonoBehaviour
         if(weaponPlayerIsOver != null)
         {
             weaponItem = weaponPlayerIsOver.GetComponent<WeaponItem>();
-            pickUpText.gameObject.SetActive(true);
-        }
-        if(weaponPlayerIsOver == null)
-        {
-            pickUpText.gameObject.SetActive(false);
         }
 
         if(Input.GetKeyDown(KeyCode.E) && weaponPlayerIsOver != null)

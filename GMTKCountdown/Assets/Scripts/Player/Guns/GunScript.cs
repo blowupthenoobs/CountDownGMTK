@@ -8,6 +8,9 @@ public abstract class GunScript : MonoBehaviour
     public GameObject bullet;
     public GameObject barrelEnd;
 
+    public int bulletSpriteIndex;
+    public int BulletSpriteIndex => bulletSpriteIndex;
+
     public virtual void Awake()
     {
         SetUpGunDetails();

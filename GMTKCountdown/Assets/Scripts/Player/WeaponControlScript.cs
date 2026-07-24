@@ -12,7 +12,7 @@ public class WeaponControlScript : MonoBehaviour
     private float currentReloadTime;
     private float currentCooldown;
 
-    [SerializeField] TextMeshProUGUI ammoText;
+    [SerializeField] BulletCounter bulletCounter;
 
     void Update()
     {
@@ -24,12 +24,21 @@ public class WeaponControlScript : MonoBehaviour
 
         if(heldWeapon != null)
         {
-           ammoText.text = (heldWeapon.data.bulletsInChamber + "/" + "∞".ToString());
+
+            if (heldWeapon.data.weapon == GunData.WeaponType.Sword)
+            {
+                bulletCounter.SetAmmo(0, 0);
+            }
+            else
+            {
+                bulletCounter.SetWeapon(heldWeapon.BulletSpriteIndex); // CHANGED - reads from GunScript instead of GunData enum
+                bulletCounter.SetAmmo(heldWeapon.data.bulletsInChamber, heldWeapon.data.maxBullets);
+            }
         }
 
         if(heldWeapon == null)
         {
-            ammoText.text = ("No Weapon!");
+            bulletCounter.SetAmmo(0, 0);
         }
 
         currentCooldown += Time.deltaTime;
@@ -75,6 +84,16 @@ public class WeaponControlScript : MonoBehaviour
 
         currentCooldown = 100;
         currentReloadTime = 0;
+
+        if (heldWeapon.data.weapon == GunData.WeaponType.Sword) // CHANGED - was heldWeapon.data.isMelee
+        {
+            bulletCounter.SetAmmo(0, 0);
+        }
+        else
+        {
+            bulletCounter.SetWeapon((int)heldWeapon.data.weapon);
+            bulletCounter.SetAmmo(heldWeapon.data.bulletsInChamber, heldWeapon.data.maxBullets);
+        }
     }
 
     public void DropWeapon()

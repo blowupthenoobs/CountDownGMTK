@@ -30,6 +30,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] int maxAmmo;
 
     [SerializeField] float timeToReload;
+
+    [SerializeField] BulletCounter bulletCounter;
     public float timeBetweenReload;
 
     bool isMeleeWeapon;
@@ -38,6 +40,8 @@ public class PlayerWeapon : MonoBehaviour
 
     PlayerMovement playerMovement;
     bool reloadClicked;
+
+    int previousID = -1;
 
     void Start()
     {
@@ -64,6 +68,7 @@ public class PlayerWeapon : MonoBehaviour
                 requestedToShoot = true;
                 currentAmmo -= amountOfAmmoToRemove;
                 timeBetweenShots = 0;
+                bulletCounter.SetAmmo(currentAmmo, maxAmmo);
             }
         }
         else
@@ -96,6 +101,7 @@ public class PlayerWeapon : MonoBehaviour
 
             currentAmmo = maxAmmo;
             timeBetweenReload = 0;
+            bulletCounter.SetAmmo(currentAmmo, maxAmmo);
         }
 
         if ((Input.GetKeyDown(KeyCode.R)) && currentAmmo < maxAmmo)
@@ -107,6 +113,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             currentAmmo = maxAmmo;
             playerMovement.newItem = false;
+            bulletCounter.SetAmmo(currentAmmo, maxAmmo);
         }
     }
 
@@ -132,6 +139,8 @@ public class PlayerWeapon : MonoBehaviour
     void SwitchIDValues()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        bool weaponChanged = (ID != previousID);
 
         if(ID == 0)
         {
@@ -197,6 +206,19 @@ public class PlayerWeapon : MonoBehaviour
             {
                 Instantiate(bullets[2], bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             }
+        }
+        if (weaponChanged)
+        {
+            if (isMeleeWeapon)
+            {
+                bulletCounter.SetAmmo(0, 0);
+            }
+            else
+            {
+                bulletCounter.SetWeapon(ID); 
+                bulletCounter.SetAmmo(currentAmmo, maxAmmo);
+            }
+            previousID = ID;
         }
     }
 

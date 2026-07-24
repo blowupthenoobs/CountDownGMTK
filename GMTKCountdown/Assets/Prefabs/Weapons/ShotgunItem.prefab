@@ -178,3 +178,4 @@ MonoBehaviour:
   data: {fileID: 0}
   bullet: {fileID: 7844104476625699976, guid: 680989c42e5174c4ebc7b4ff0aedbf17, type: 3}
   barrelEnd: {fileID: 3040386499060440741}
+  bulletSpriteIndex: 1
