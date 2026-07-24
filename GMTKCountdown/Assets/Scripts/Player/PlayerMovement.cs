@@ -14,13 +14,9 @@ public class PlayerMovement : MonoBehaviour
     private WeaponItem weaponItem;
 
     public float speed;
-
-    public GameObject currentWeapon;
-    public int weaponIDCurrent;
     [SerializeField] WeaponControlScript weaponControlScript;
 
     public GameObject weaponPlayerIsOver;
-    public bool hasPickedUpItem;
 
     public GameObject[] WeaponItems;
     public GameObject weapon;
@@ -30,13 +26,6 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-
-        weaponIDCurrent = 0;
-        //0 = fists
-        //1 = sword
-        //2 = revolver
-        //3 = shotgun
-        //4 = sniper
     }
 
     void Update()
@@ -63,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             weaponControlScript.PickUpWeapon(weaponPlayerIsOver);
         }
 
-        if((Input.GetKeyDown(KeyCode.Q)) && weaponIDCurrent != 0)
+        if((Input.GetKeyDown(KeyCode.Q)))
         {
             // Instantiate(WeaponItems[weaponIDCurrent - 1], transform.position, transform.rotation);
             // currentWeapon = null;
