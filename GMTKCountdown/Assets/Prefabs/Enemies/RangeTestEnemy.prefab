@@ -361,7 +361,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  health: 45
+  health: 10
   defaultMoveSpeed: 0.6
   attackRange: 8
   damage: 1

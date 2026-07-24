@@ -150,4 +150,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   raycastSize: {x: 1.91, y: 2.15}
-  damage: 5

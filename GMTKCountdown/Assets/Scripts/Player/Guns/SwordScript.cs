@@ -6,9 +6,6 @@ public class SwordScript : GunScript
 {
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] Vector2 raycastSize;
-
-    public int damage;
-    public bool hasHit;
     
     public override void Shoot()
     {
@@ -16,11 +13,7 @@ public class SwordScript : GunScript
 
         if (hit)
         {
-            hasHit = true;
-        }
-        else
-        {
-            hasHit = false;
+            Debug.Log("Did damage to enemy!");
         }
     }
 
