@@ -30,11 +30,7 @@ public class RangeEnemy : EnemyScript
             RunAtPlayer(defaultMoveSpeed);
         }
 
-        if(gameObject == null)
-        {
-            return;
-        }
-        else
+        if(target != null)
         {
             if (Vector2.Distance(transform.position, target.transform.position) < attackRange)
             {
