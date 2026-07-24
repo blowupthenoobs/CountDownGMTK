@@ -29,15 +29,22 @@ public class RangeEnemy : EnemyScript
             RunAtPlayer(defaultMoveSpeed);
         }
 
-        if(Vector2.Distance(transform.position, target.transform.position) < attackRange)
+        if(gameObject == null)
         {
-            canRunAtPlayer = false;
-            canShoot = true;
+            return;
         }
         else
         {
-            canRunAtPlayer = true;
-            canShoot = false;
+            if (Vector2.Distance(transform.position, target.transform.position) < attackRange)
+            {
+                canRunAtPlayer = false;
+                canShoot = true;
+            }
+            else
+            {
+                canRunAtPlayer = true;
+                canShoot = false;
+            }
         }
     }
 
