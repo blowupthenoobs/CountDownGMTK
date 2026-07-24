@@ -146,7 +146,9 @@ MonoBehaviour:
   data: {fileID: 0}
   bullet: {fileID: 0}
   barrelEnd: {fileID: 0}
+  bulletSpriteIndex: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   raycastSize: {x: 1.91, y: 2.15}
+  swordDamage: 5
