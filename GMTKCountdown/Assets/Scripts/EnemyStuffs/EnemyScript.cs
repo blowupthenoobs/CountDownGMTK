@@ -50,6 +50,17 @@ public abstract class EnemyScript : MonoBehaviour
         rb.MovePosition(rb.position + normalizedDirection * speed * Time.fixedDeltaTime);
     }
 
+    protected void OrbitPlayer(float orbitDistance, float orbitSpeed)
+    {
+        if(target != null)
+        {
+            var directionDifference = (target.transform.position - transform.position);
+            float currentOrbitDegree = Mathf.Atan2(directionDifference.y, directionDifference.x) * Mathf.Rad2Deg;
+            float newOrbitDegree = currentOrbitDegree + orbitSpeed * Time.fixedDeltaTime;
+            rb.MovePosition(new Vector2(Mathf.Cos(newOrbitDegree * Mathf.Deg2Rad), Mathf.Sin(newOrbitDegree * Mathf.Deg2Rad)) * orbitDistance);
+        }
+    }
+
     protected void Lunge(Vector2 direction, float power)
     {
         rb.AddForce(direction * power, ForceMode2D.Impulse);
@@ -66,14 +77,14 @@ public abstract class EnemyScript : MonoBehaviour
         // Debug.Log(hit.transform);
     }
 
-    protected void CastProjectile(GameObject projectile)
+    protected GameObject CastProjectile(GameObject projectile)
     {
-        Instantiate(projectile, transform.position, transform.rotation);
+        return Instantiate(projectile, transform.position, transform.rotation);
     }
 
-    protected void CastProjectile(GameObject projectile, Quaternion rotation)
+    protected GameObject CastProjectile(GameObject projectile, Quaternion rotation)
     {
-        Instantiate(projectile, transform.position, rotation);
+        return Instantiate(projectile, transform.position, rotation);
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)

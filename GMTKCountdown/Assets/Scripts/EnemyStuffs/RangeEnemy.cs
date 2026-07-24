@@ -32,15 +32,18 @@ public class RangeEnemy : EnemyScript
 
         if(target != null)
         {
-            if (Vector2.Distance(transform.position, target.transform.position) < attackRange)
+            if(target != null)
             {
-                canRunAtPlayer = false;
-                canShoot = true;
-            }
-            else
-            {
-                canRunAtPlayer = true;
-                canShoot = false;
+                if (Vector2.Distance(transform.position, target.transform.position) < attackRange)
+                {
+                    canRunAtPlayer = false;
+                    canShoot = true;
+                }
+                else
+                {
+                    canRunAtPlayer = true;
+                    canShoot = false;
+                }
             }
         }
     }
