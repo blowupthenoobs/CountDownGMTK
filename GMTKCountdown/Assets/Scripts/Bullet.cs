@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
-        if(speed <= 0.01)
+        if(speed <= 0.1)
         {
             Destroy(gameObject, 0.3f);
         }

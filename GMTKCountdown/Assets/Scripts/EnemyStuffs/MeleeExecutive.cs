@@ -28,7 +28,7 @@ public class MeleeExecutive : EnemyScript
         {
             rb.velocity = new Vector2();
 
-            Debug.Log("not attacking");
+            // Debug.Log("not attacking");
             if(CanSeePlayer())
                 RunAtPlayer(defaultMoveSpeed);   
             
