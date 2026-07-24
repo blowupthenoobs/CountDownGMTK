@@ -17,6 +17,6 @@ public class RevolverScript : GunScript
         data.weapon = GunData.WeaponType.Shotgun;
         data.cooldownTime = 0.5f;
         data.maxBullets = 6;
-        data.reloadTime = 0.7f;
+        data.reloadTime = 2f;
     }
 }

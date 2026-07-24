@@ -17,6 +17,6 @@ public class SniperScript : GunScript
         data.weapon = GunData.WeaponType.Sniper;
         data.cooldownTime = 1f;
         data.maxBullets = 10;
-        data.reloadTime = 0.65f;
+        data.reloadTime = 1.5f;
     }
 }

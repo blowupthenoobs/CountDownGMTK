@@ -9,7 +9,7 @@ public class WeaponControlScript : MonoBehaviour
     public GunScript heldWeapon;
     private float currentReloadTime;
     private float currentCooldown;
-    
+
     void Update()
     {
         Rotate();

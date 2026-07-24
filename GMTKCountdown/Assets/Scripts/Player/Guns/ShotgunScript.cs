@@ -20,6 +20,6 @@ public class ShotgunScript : GunScript
         data.weapon = GunData.WeaponType.Shotgun;
         data.cooldownTime = 0.85f;
         data.maxBullets = 2;
-        data.reloadTime = 0.85f;
+        data.reloadTime = 2f;
     }
 }
