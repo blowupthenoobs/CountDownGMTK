@@ -24,7 +24,7 @@ public class WeaponControlScript : MonoBehaviour
 
         if(heldWeapon != null)
         {
-           ammoText.text = (heldWeapon.data.bulletsInChamber + "/" + heldWeapon.data.maxBullets.ToString());
+           ammoText.text = (heldWeapon.data.bulletsInChamber + "/" + "∞".ToString());
         }
 
         if(heldWeapon == null)
