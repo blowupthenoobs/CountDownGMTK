@@ -13,10 +13,12 @@ public class RangeEnemy : EnemyScript
     public bool canShoot;
     bool canRunAtPlayer;
 
+    SwordScript swordScript;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+       swordScript = FindAnyObjectByType<SwordScript>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,11 @@ public class RangeEnemy : EnemyScript
                 canRunAtPlayer = true;
                 canShoot = false;
             }
+        }
+
+        if(swordScript.hasHit)
+        {
+            health -= swordScript.damage;
         }
     }
 
