@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
     {
         rangeEnemy = FindFirstObjectByType<RangeEnemy>();
         playerHealth = FindFirstObjectByType<PlayerHealth>();
+        rangeEnemy.player = GameObject.FindGameObjectWithTag("Player").transform;
 
         Direction();
     }
