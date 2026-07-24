@@ -105,8 +105,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  raycastSize: {x: 1.91, y: 2.15}
-  damageCollider: {fileID: 7706561122763949722, guid: 82a54d2e7cebed9448c3af37b8de9097, type: 3}
+  raycastSize: {x: 1.75, y: 1.97}
+  damage: 5
 --- !u!61 &2177774774146219932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.046139896, y: 0.019519448}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.52, y: -0.8333334}
@@ -150,5 +150,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0922782, y: 1.2096367}
+  m_Size: {x: 1.1985441, y: 1.2628961}
   m_EdgeRadius: 0
