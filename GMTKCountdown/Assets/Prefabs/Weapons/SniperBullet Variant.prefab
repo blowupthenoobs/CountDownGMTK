@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1956446781434705284}
   - component: {fileID: 1833040124979623423}
-  - component: {fileID: 629757364625212845}
   - component: {fileID: 6302622132067837501}
   - component: {fileID: 3010870278001955105}
+  - component: {fileID: 3991516435552246558}
   m_Layer: 0
   m_Name: SniperBullet Variant
   m_TagString: Bullet
@@ -136,41 +136,12 @@ MonoBehaviour:
   damage: 50
   slowdownSpeed: 0.99
   ID: 0
---- !u!58 &629757364625212845
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6691929358874418008}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  weaponItems:
+  - {fileID: 7039902834799487547, guid: c935df3e8ce994a56bd56e34236eb263, type: 3}
+  - {fileID: 4113396297813687897, guid: ed1216646ae2548c1b4cedf9ae844c4e, type: 3}
+  - {fileID: 7888518089474636717, guid: 0927e3d9877d4432c92beb91725de74a, type: 3}
+  - {fileID: 1689624241021896480, guid: 2c50bec3d7690466fbcd4ce074fd6bdf, type: 3}
+  dropChance: 20
 --- !u!50 &6302622132067837501
 Rigidbody2D:
   serializedVersion: 4
@@ -211,3 +182,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 3
+--- !u!61 &3991516435552246558
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6691929358874418008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0006595254, y: 0.0008010119}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.09118688, y: 0.039256126}
+  m_EdgeRadius: 0

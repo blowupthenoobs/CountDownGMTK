@@ -13,6 +13,7 @@ TagManager:
   - Bullet
   - EnemyCollide
   - EnemyDontCollide
+  - Crate
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,9 @@ public class Bullet : MonoBehaviour
     public float slowdownSpeed;
     public int ID;
 
+    public GameObject[] weaponItems;
+    public float dropChance;
+
     void Start()
     {
         
@@ -32,11 +35,24 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("EnemyCollide"))
+        {
             other.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
+            Destroy(gameObject);
+        }
 
         if(other.GetComponent<Rigidbody2D>() && !other.CompareTag("Bullet") && !other.CompareTag("EnemyDontCollide") && !other.CompareTag("Player"))
         {
-            Debug.Log(other);
+            Destroy(gameObject);
+        }
+
+        if(other.CompareTag("Crate"))
+        {
+            if(Random.Range(1, 100) <= dropChance)
+            {
+                int randomNum = Random.Range(0, 4);
+                Instantiate(weaponItems[randomNum], new Vector3(transform.position.x, transform.position.y - .35f, 0f), transform.rotation);
+            }
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }
