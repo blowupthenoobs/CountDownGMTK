@@ -23,6 +23,7 @@ public class RangeEnemy : EnemyScript
     void Update()
     {
         ProjectileFire();
+        rb.velocity = Vector3.zero;
 
         if(CanSeePlayer() && canRunAtPlayer)
         {
