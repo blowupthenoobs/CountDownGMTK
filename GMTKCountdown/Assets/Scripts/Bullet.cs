@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
         if(other.CompareTag("EnemyCollide"))
             other.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
 
-        if(other.GetComponent<Rigidbody2D>() && !other.CompareTag("Bullet") && !other.CompareTag("EnemyDontCollide"))
+        if(other.GetComponent<Rigidbody2D>() && !other.CompareTag("Bullet") && !other.CompareTag("EnemyDontCollide") && !other.CompareTag("Player"))
         {
             Debug.Log(other);
             Destroy(gameObject);
