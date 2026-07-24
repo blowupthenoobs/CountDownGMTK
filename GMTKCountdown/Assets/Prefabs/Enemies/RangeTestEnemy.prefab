@@ -363,10 +363,10 @@ MonoBehaviour:
     m_Bits: 8
   health: 10
   defaultMoveSpeed: 0.6
-  attackRange: 4
+  attackRange: 8
   damage: 1
   projectile: {fileID: 2595906320510985066, guid: 8c15838d8cacfa341b6ae57ef8710912, type: 3}
-  projectileFireRate: 2
+  projectileFireRate: 1.45
   player: {fileID: 0}
   canShoot: 1
 --- !u!1 &8279087801214937201

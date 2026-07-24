@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
     }
     void Movement()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.position += (Vector3) direction * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -42,6 +42,16 @@ public class Projectile : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             playerHealth.health -= damage;
+            Destroy(gameObject);
+        }
+
+        if(other.CompareTag("Crate"))
+        {
+            Destroy(gameObject);
+        }
+
+        if(other.CompareTag("Wall"))
+        {
             Destroy(gameObject);
         }
     }
