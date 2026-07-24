@@ -50,5 +50,9 @@ public class RangeEnemy : EnemyScript
             Instantiate(projectile, transform.position, transform.rotation);
             timeBetweenSpawns = 0;
         }
+        if(!canShoot)
+        {
+            timeBetweenSpawns = 0;
+        }
     }
 }

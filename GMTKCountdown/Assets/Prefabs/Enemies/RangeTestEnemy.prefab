@@ -367,7 +367,7 @@ MonoBehaviour:
   damage: 1
   projectile: {fileID: 2595906320510985066, guid: 8c15838d8cacfa341b6ae57ef8710912, type: 3}
   projectileFireRate: 2
-  player: {fileID: 645086801602952632, guid: dc232ef763b104874945c22a9d781a5a, type: 3}
+  player: {fileID: 0}
   canShoot: 1
 --- !u!1 &8279087801214937201
 GameObject:
