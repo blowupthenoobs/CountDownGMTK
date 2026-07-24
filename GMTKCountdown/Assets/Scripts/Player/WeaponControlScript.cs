@@ -20,16 +20,20 @@ public class WeaponControlScript : MonoBehaviour
 
         currentCooldown += Time.deltaTime;
 
-        if(heldWeapon.data.bulletsInChamber == 0)
+        if(heldWeapon != null)
         {
-            currentReloadTime += Time.deltaTime;
-
-            if(currentReloadTime >= heldWeapon.data.reloadTime)
+            if(heldWeapon.data.bulletsInChamber == 0)
             {
-                heldWeapon.data.Reload();
-                currentReloadTime = 0;    
+                currentReloadTime += Time.deltaTime;
+
+                if(currentReloadTime >= heldWeapon.data.reloadTime)
+                {
+                    heldWeapon.data.Reload();
+                    currentReloadTime = 0;    
+                }
             }
         }
+        
     }
 
     void UseWeapon()
