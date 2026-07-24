@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WeaponControlScript : MonoBehaviour
@@ -7,8 +8,11 @@ public class WeaponControlScript : MonoBehaviour
     [SerializeField] Transform rotationPoint;
     [SerializeField] Transform gunSpot;
     public GunScript heldWeapon;
+    public GunData data;
     private float currentReloadTime;
     private float currentCooldown;
+
+    [SerializeField] TextMeshProUGUI ammoText;
 
     void Update()
     {
@@ -16,6 +20,16 @@ public class WeaponControlScript : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             UseWeapon();
+        }
+
+        if(heldWeapon != null)
+        {
+           ammoText.text = (heldWeapon.data.bulletsInChamber + "/" + heldWeapon.data.maxBullets.ToString());
+        }
+
+        if(heldWeapon == null)
+        {
+            ammoText.text = ("No Weapon!");
         }
 
         currentCooldown += Time.deltaTime;
