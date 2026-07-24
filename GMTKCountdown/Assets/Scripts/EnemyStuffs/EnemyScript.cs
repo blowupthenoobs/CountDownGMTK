@@ -54,10 +54,11 @@ public abstract class EnemyScript : MonoBehaviour
     {
         if(target != null)
         {
-            var directionDifference = (target.transform.position - transform.position);
+            var directionDifference = (transform.position - target.transform.position);
             float currentOrbitDegree = Mathf.Atan2(directionDifference.y, directionDifference.x) * Mathf.Rad2Deg;
+            Debug.Log(currentOrbitDegree);
             float newOrbitDegree = currentOrbitDegree + orbitSpeed * Time.fixedDeltaTime;
-            rb.MovePosition(new Vector2(Mathf.Cos(newOrbitDegree * Mathf.Deg2Rad), Mathf.Sin(newOrbitDegree * Mathf.Deg2Rad)) * orbitDistance);
+            rb.MovePosition((Vector2)target.transform.position + (new Vector2(Mathf.Cos(newOrbitDegree * Mathf.Deg2Rad), Mathf.Sin(newOrbitDegree * Mathf.Deg2Rad)) * orbitDistance));
         }
     }
 
