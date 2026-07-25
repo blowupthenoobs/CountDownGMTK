@@ -31,7 +31,6 @@ public abstract class EnemyScript : MonoBehaviour
             return false;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, target.transform.position - transform.position, Mathf.Infinity, raycastLayers);
-        Debug.DrawLine(transform.position, hit.transform.position, new Color(0f, 0f, 1f));
         // Debug.DrawLine(transform.position, target.transform.position - transform.position, new Color(1f, 0f, 0f)); //Dunno why this one doesn't work quite right
         // Debug.Log(hit.transform);
 

@@ -99,11 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHeight: 2
-  moveSpeed: 2
+  moveSpeed: 4
   risingSpeed: 3
   fallingSpeed: 0.5
   fallAccellerationSpeed: 5
-  damage: 2
+  damage: 10
   splashRadius: 2
   playerLayer:
     serializedVersion: 2
