@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SwordScript : GunScript
@@ -13,6 +14,7 @@ public class SwordScript : GunScript
     public override void Shoot()
     {
         var hit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
+        canHit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
 
         if ((Input.GetMouseButtonDown(0)) && hit && canHit)
         {
@@ -33,22 +35,6 @@ public class SwordScript : GunScript
         if(data.cooldownTime <= currentWait)
             return true;
         return false;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("EnemyCollide"))
-        {
-            canHit = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("EnemyCollide"))
-        {
-            canHit = false;
-        }
     }
 
     private void OnDrawGizmos()

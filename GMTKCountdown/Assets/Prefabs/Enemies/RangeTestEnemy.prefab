@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6001799677749823723}
   - component: {fileID: 3333305327101882857}
   - component: {fileID: 2407947376604700159}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Physical Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1471338459772303408}
   - component: {fileID: 674345660420502905}
   - component: {fileID: 6089290438619099644}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RangeTestEnemy
   m_TagString: EnemyDontCollide
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5187460958553838675}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ProjectileSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
