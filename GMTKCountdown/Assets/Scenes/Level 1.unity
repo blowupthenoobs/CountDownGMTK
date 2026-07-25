@@ -254,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5995211037611027875, guid: 4aa094b2d92386e46b924cf1dc606842, type: 3}
       propertyPath: orbitSpeed
-      value: 0.2
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5995211037611027875, guid: 4aa094b2d92386e46b924cf1dc606842, type: 3}
       propertyPath: movementModeDuration

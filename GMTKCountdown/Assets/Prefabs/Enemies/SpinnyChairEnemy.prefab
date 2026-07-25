@@ -118,8 +118,10 @@ MonoBehaviour:
   maxProjectileSpeed: 5
   minOrbitRange: 3
   maxOrbitRange: 7
-  orbitSpeed: 2
-  movementModeDuration: 4
+  orbitSpeed: 50
+  movementModeDuration: 2
+  minWallDist: 3.5
+  maxDistFromPlayer: 8
   dashSpeed: 5
 --- !u!58 &1521466473096862856
 CircleCollider2D:
