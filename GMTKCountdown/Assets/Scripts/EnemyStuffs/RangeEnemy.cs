@@ -6,6 +6,7 @@ public class RangeEnemy : EnemyScript
 {
     [SerializeField] GameObject projectile;
     [SerializeField] float projectileFireRate;
+    [SerializeField] Animator animator;
 
     public Transform player;
     float timeBetweenSpawns;
@@ -17,6 +18,8 @@ public class RangeEnemy : EnemyScript
     void Update()
     {
         ProjectileFire();
+        FacePlayer();
+
         rb.velocity = Vector3.zero;
 
         if(CanSeePlayer() && canRunAtPlayer)
@@ -31,11 +34,13 @@ public class RangeEnemy : EnemyScript
                 if (Vector2.Distance(transform.position, target.transform.position) < attackRange)
                 {
                     canRunAtPlayer = false;
+                    animator.SetBool("isIdle", true);
                     canShoot = true;
                 }
                 else
                 {
                     canRunAtPlayer = true;
+                    animator.SetBool("isIdle", false);
                     canShoot = false;
                 }
             }
@@ -48,6 +53,7 @@ public class RangeEnemy : EnemyScript
 
         if(projectileFireRate <= timeBetweenSpawns && canShoot)
         {
+            animator.SetTrigger("isAttacking");
             CastProjectile(projectile);
             timeBetweenSpawns = 0;
         }

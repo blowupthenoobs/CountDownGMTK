@@ -17,6 +17,7 @@ public abstract class EnemyScript : MonoBehaviour
     [SerializeField] protected float defaultMoveSpeed;
     [SerializeField] protected float attackRange;
     [SerializeField] float damage;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     protected virtual void Awake()
     {
@@ -114,5 +115,20 @@ public abstract class EnemyScript : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject);
+    }
+
+    protected void FacePlayer()
+    {
+        if(target == null)
+            return;
+
+        if(target.transform.position.x > transform.position.x)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 }

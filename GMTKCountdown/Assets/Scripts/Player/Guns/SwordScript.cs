@@ -11,7 +11,7 @@ public class SwordScript : GunScript
     [SerializeField] float damage;
     [SerializeField] Animator animator;
 
-    WeaponControlScript weaponControlScript;
+    //WeaponControlScript weaponControlScript;
     bool canHit;
 
     protected override void Awake()
