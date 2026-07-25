@@ -103,7 +103,11 @@ MonoBehaviour:
   risingSpeed: 3
   fallingSpeed: 0.5
   fallAccellerationSpeed: 5
+  damage: 2
   splashRadius: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!50 &4022216474287567231
 Rigidbody2D:
   serializedVersion: 4

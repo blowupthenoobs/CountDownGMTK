@@ -17,7 +17,6 @@ public class SwordScript : GunScript
     protected override void Awake()
     {
         base.Awake();
-        weaponControlScript = Object.FindObjectOfType<WeaponControlScript>();
     }
 
     void Start()

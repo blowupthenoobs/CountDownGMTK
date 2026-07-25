@@ -108,6 +108,7 @@ MonoBehaviour:
     m_Bits: 128
   raycastSize: {x: 1.75, y: 1.97}
   damage: 5
+  animator: {fileID: 1818895589066763525}
 --- !u!61 &2177774774146219932
 BoxCollider2D:
   m_ObjectHideFlags: 0

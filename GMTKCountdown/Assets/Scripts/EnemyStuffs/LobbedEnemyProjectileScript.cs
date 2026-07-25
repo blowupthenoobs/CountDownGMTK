@@ -10,7 +10,9 @@ public class LobbedEnemyProjectileScript : MonoBehaviour
     [SerializeField] float risingSpeed;
     [SerializeField] float fallingSpeed;
     [SerializeField] float fallAccellerationSpeed;
+    [SerializeField] float damage;
     [SerializeField] float splashRadius;
+    [SerializeField] LayerMask playerLayer;
 
     private float currentHeight;
 
@@ -35,6 +37,9 @@ public class LobbedEnemyProjectileScript : MonoBehaviour
     private void Splash()
     {
         //Attack people in circle around it
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, splashRadius, playerLayer);
+        if(hit)
+            hit.gameObject.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
         Destroy(gameObject);
     }
 
