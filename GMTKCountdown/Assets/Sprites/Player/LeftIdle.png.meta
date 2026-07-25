@@ -124,8 +124,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7541e8dd06891240800000000000000
-      internalID: 4762985474952349054
+      spriteID: e82ddf210bbfae74b91868f30d13e1d1
+      internalID: -1527830271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftIdle_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 0
+        width: 19
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b27da153e3f3249b8af2ca6be61506
+      internalID: 2023368271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftIdle_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 19
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae37c95740e9000479b96b6663b67099
+      internalID: -1071186093
       vertices: []
       indices: 
       edges: []
@@ -133,7 +175,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LeftIdle_0: 4762985474952349054
+      LeftIdle_0: -1527830271
+      LeftIdle_1: 2023368271
+      LeftIdle_2: -1071186093
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

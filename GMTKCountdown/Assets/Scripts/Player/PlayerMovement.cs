@@ -78,16 +78,6 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + normalizedInput * speed * Time.fixedDeltaTime);
     }
 
-    void Animation()
-    {
-        if(normalizedInput.magnitude > 0)
-        {
-            animator.SetFloat("PositionX", hInput);
-            animator.SetFloat("PositionY", vInput);
-        }
-        animator.SetFloat("isWalkingMagnitude", normalizedInput.magnitude);
-    }
-
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Weapon")

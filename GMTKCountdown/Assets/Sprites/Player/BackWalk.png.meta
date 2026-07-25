@@ -124,8 +124,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfb12a6d4b8b504e0800000000000000
-      internalID: -2016002171343856643
+      spriteID: 3ee0efb2348059641a07287b5f871c9e
+      internalID: -2103794268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackWalk_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bf94f5e0c6e9149ac7762ac763caff
+      internalID: 1818232682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackWalk_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b3e9a05a8f90b4cbcd8e59d54aac41
+      internalID: -786273244
       vertices: []
       indices: 
       edges: []
@@ -133,7 +175,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BackWalk_0: -2016002171343856643
+      BackWalk_0: -2103794268
+      BackWalk_1: 1818232682
+      BackWalk_2: -786273244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

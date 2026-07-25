@@ -140,11 +140,7 @@ MonoBehaviour:
   - {fileID: 4113396297813687897, guid: ed1216646ae2548c1b4cedf9ae844c4e, type: 3}
   weapon: {fileID: 0}
   newItem: 0
-<<<<<<< Updated upstream
   animator: {fileID: 4361722715166093382}
-=======
-  animator: {fileID: 3991141796236726705}
->>>>>>> Stashed changes
 --- !u!50 &1001803851609457975
 Rigidbody2D:
   serializedVersion: 4
@@ -241,11 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3302471398538228173}
   - component: {fileID: 6917908368265545129}
-<<<<<<< Updated upstream
   - component: {fileID: 4361722715166093382}
-=======
-  - component: {fileID: 3991141796236726705}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -262,8 +254,8 @@ Transform:
   m_GameObject: {fileID: 8091234092013385006}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0, z: 0}
-  m_LocalScale: {x: 1.495, y: 1.495, z: 1.495}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 645086801602952632}
@@ -309,11 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-<<<<<<< Updated upstream
   m_Sprite: {fileID: -876032773, guid: 14c3b0fd75e67884b9a1a2cfd566c483, type: 3}
-=======
-  m_Sprite: {fileID: -1395256164, guid: 14c3b0fd75e67884b9a1a2cfd566c483, type: 3}
->>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -324,11 +312,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< Updated upstream
 --- !u!95 &4361722715166093382
-=======
---- !u!95 &3991141796236726705
->>>>>>> Stashed changes
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
