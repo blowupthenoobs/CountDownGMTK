@@ -14,8 +14,9 @@ public class SwordScript : GunScript
     WeaponControlScript weaponControlScript;
     bool canHit;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         weaponControlScript = Object.FindObjectOfType<WeaponControlScript>();
     }
 
