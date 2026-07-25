@@ -13,6 +13,9 @@ public class Projectile : MonoBehaviour
     Transform player;
 
     Vector2 direction;
+    Vector2 moneyDirection;
+
+    [SerializeField] bool isMoney;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,6 +34,14 @@ public class Projectile : MonoBehaviour
     void Direction()
     {
         direction = (player.position - transform.position).normalized;
+
+        if(isMoney)
+        {
+            direction = (player.position - transform.position).normalized;
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0,angle);
+        }
     }
     void Movement()
     {

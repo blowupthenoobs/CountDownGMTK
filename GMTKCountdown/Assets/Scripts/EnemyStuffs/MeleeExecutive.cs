@@ -18,7 +18,7 @@ public class MeleeExecutive : EnemyScript
 
     void Update()
     {
-        
+        FacePlayer();
     }
 
     void FixedUpdate()
@@ -29,16 +29,26 @@ public class MeleeExecutive : EnemyScript
 
             // Debug.Log("not attacking");
             if(CanSeePlayer())
-                RunAtPlayer(defaultMoveSpeed);   
+            {
+                RunAtPlayer(defaultMoveSpeed);
+                animator.SetBool("isIdle", false);
+            }
+
+            if(target == null)
+            {
+                animator.SetBool("isIdle", true);
+            }
             
             if(target != null)
             {
                 if((target.transform.position - transform.position).magnitude <= minDistToAttack)
                 {
+                    attacking = true;
+                    animator.SetTrigger("isAttacking");
+                    Debug.Log("AttackTriggered");
                     StartCoroutine(Attack());
                 }
             }
-            
         }
     }
 

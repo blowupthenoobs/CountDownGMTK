@@ -6,7 +6,6 @@ public class RangeEnemy : EnemyScript
 {
     [SerializeField] GameObject projectile;
     [SerializeField] float projectileFireRate;
-    [SerializeField] Animator animator;
 
     public Transform player;
     float timeBetweenSpawns;
@@ -14,13 +13,14 @@ public class RangeEnemy : EnemyScript
     public bool canShoot;
     bool canRunAtPlayer;
 
+    [SerializeField] bool isMoneyEnemy;
+    [SerializeField] bool isCoffeeEnemy;
+
     // Update is called once per frame
     void Update()
     {
         ProjectileFire();
         FacePlayer();
-
-        rb.velocity = Vector3.zero;
 
         if(CanSeePlayer() && canRunAtPlayer)
         {
@@ -53,7 +53,15 @@ public class RangeEnemy : EnemyScript
 
         if(projectileFireRate <= timeBetweenSpawns && canShoot)
         {
-            animator.SetTrigger("isAttacking");
+            if(isCoffeeEnemy)
+            {
+                animator.SetTrigger("isAttacking");
+            }
+            if(isMoneyEnemy)
+            {
+                animator.SetTrigger("MoneyAttack");
+            }    
+
             CastProjectile(projectile);
             timeBetweenSpawns = 0;
         }

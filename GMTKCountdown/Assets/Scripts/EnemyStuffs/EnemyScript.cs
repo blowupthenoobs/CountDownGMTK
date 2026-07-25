@@ -18,6 +18,7 @@ public abstract class EnemyScript : MonoBehaviour
     [SerializeField] protected float attackRange;
     [SerializeField] float damage;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] protected Animator animator;
 
     protected virtual void Awake()
     {
