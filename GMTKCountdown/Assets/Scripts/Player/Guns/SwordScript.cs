@@ -27,15 +27,14 @@ public class SwordScript : GunScript
 
     void Update()
     {
-
-        if(Input.GetMouseButtonDown(0))
-        {
-           animator.SetBool("isAttacking", true);
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            animator.SetBool("isAttacking", false);
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                animator.SetBool("isAttacking", true);
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                animator.SetBool("isAttacking", false);
+            }
     }
 
     public override void Shoot()
