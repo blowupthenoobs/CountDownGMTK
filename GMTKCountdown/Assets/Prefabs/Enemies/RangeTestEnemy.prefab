@@ -261,13 +261,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   health: 45
-  defaultMoveSpeed: 0.6
+  defaultMoveSpeed: 1.2
   attackRange: 8
   damage: 1
   spriteRenderer: {fileID: 4604128129332424354}
   animator: {fileID: 5631405201421019225}
   projectile: {fileID: 2595906320510985066, guid: 8c15838d8cacfa341b6ae57ef8710912, type: 3}
-  projectileFireRate: 1.45
+  projectileFireRate: 0.7
   player: {fileID: 0}
   canShoot: 1
   isMoneyEnemy: 0
