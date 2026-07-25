@@ -56,7 +56,7 @@ public class SwordScript : GunScript
         data = (GunData)ScriptableObject.CreateInstance(typeof(GunData));
 
         data.weapon = GunData.WeaponType.Sword;
-        data.cooldownTime = 1f;
+        data.cooldownTime = 0.75f;
     }
 
     public override bool CanUseWeapon(float currentWait)
