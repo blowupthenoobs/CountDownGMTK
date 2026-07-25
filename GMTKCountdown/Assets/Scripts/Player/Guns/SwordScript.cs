@@ -17,23 +17,24 @@ public class SwordScript : GunScript
     protected override void Awake()
     {
         base.Awake();
+        GetComponent<Animator>().enabled = true;
     }
 
     void Start()
     {
-        animator.enabled = false;
+        // animator.enabled = false;
     }
 
     void Update()
     {
-            if (Input.GetMouseButtonDown(0))
-            {
-                animator.SetBool("isAttacking", true);
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                animator.SetBool("isAttacking", false);
-            }
+        if (Input.GetMouseButtonDown(0) && transform.parent?.parent?.gameObject.GetComponent<WeaponControlScript>() != null)
+        {
+            animator.SetBool("isAttacking", true);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            animator.SetBool("isAttacking", false);
+        }
     }
 
     public override void Shoot()
@@ -44,6 +45,7 @@ public class SwordScript : GunScript
 
             if (hit)
             {
+                Debug.Log("hit");
                 hit.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
             }
         }

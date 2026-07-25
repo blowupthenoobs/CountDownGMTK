@@ -110,6 +110,7 @@ MonoBehaviour:
   defaultMoveSpeed: 20
   attackRange: 10
   damage: 0
+  spriteRenderer: {fileID: 0}
   coffeeCup: {fileID: 7351187806367048681, guid: 8ff104d7b8c947146bdbb38fcba8a252, type: 3}
   minDistToAttack: 100
   timeBetweenAttacks: 0.2
