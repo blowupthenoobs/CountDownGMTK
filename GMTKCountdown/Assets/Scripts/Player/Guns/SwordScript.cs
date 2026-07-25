@@ -14,27 +14,21 @@ public class SwordScript : GunScript
     WeaponControlScript weaponControlScript;
     bool canHit;
 
-    void Awake()
+    private void Awake()
     {
-        weaponControlScript = Object.FindObjectOfType<WeaponControlScript>();
-    }
-
-    void Start()
-    {
-        animator.enabled = false;
+        weaponControlScript = FindFirstObjectByType<WeaponControlScript>();
     }
 
     void Update()
     {
-
-        if(Input.GetMouseButtonDown(0))
-        {
-           animator.SetBool("isAttacking", true);
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            animator.SetBool("isAttacking", false);
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                animator.SetBool("isAttacking", true);
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                animator.SetBool("isAttacking", false);
+            }
     }
 
     public override void Shoot()
