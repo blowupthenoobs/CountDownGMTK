@@ -8,13 +8,13 @@ public class SwordScript : GunScript
     [SerializeField] Vector2 raycastSize;
 
     [SerializeField] float damage;
-    bool canHit;
+    public bool canHit;
 
     public override void Shoot()
     {
         var hit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
 
-        if ((Input.GetMouseButtonDown(0)) && hit)
+        if ((Input.GetMouseButtonDown(0)) && hit && canHit)
         {
             hit.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
         }
@@ -33,6 +33,22 @@ public class SwordScript : GunScript
         if(data.cooldownTime <= currentWait)
             return true;
         return false;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("EnemyCollide"))
+        {
+            canHit = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("EnemyCollide"))
+        {
+            canHit = false;
+        }
     }
 
     private void OnDrawGizmos()
