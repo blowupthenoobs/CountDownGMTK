@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6001799677749823723}
   - component: {fileID: 3333305327101882857}
   - component: {fileID: 2407947376604700159}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Physical Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  health: 10
+  health: 45
   defaultMoveSpeed: 0.6
   attackRange: 8
   damage: 1

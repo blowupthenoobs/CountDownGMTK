@@ -13,12 +13,15 @@ public class SwordScript : GunScript
 
     public override void Shoot()
     {
-        var hit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
-        canHit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
-
-        if ((Input.GetMouseButtonDown(0)) && hit && canHit)
+        if(Input.GetMouseButtonDown(0))
         {
-            hit.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
+            Collider2D hit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
+
+            if (hit)
+            {
+                Debug.Log("Hit:" + hit.name);
+                hit.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
+            }
         }
     }
 
