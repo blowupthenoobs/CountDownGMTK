@@ -9,7 +9,33 @@ public class SwordScript : GunScript
     [SerializeField] Vector2 raycastSize;
 
     [SerializeField] float damage;
-    public bool canHit;
+    [SerializeField] Animator animator;
+
+    WeaponControlScript weaponControlScript;
+    bool canHit;
+
+    void Awake()
+    {
+        weaponControlScript = Object.FindObjectOfType<WeaponControlScript>();
+    }
+
+    void Start()
+    {
+        animator.enabled = false;
+    }
+
+    void Update()
+    {
+
+        if(Input.GetMouseButtonDown(0))
+        {
+           animator.SetBool("isAttacking", true);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            animator.SetBool("isAttacking", false);
+        }
+    }
 
     public override void Shoot()
     {
@@ -19,7 +45,6 @@ public class SwordScript : GunScript
 
             if (hit)
             {
-                Debug.Log("Hit:" + hit.name);
                 hit.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
             }
         }
