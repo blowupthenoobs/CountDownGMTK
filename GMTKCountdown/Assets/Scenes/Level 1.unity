@@ -147079,10 +147079,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7908901012177720648, guid: 14f4cae048adef14288212fe7f110260, type: 3}
-      propertyPath: m_SortingOrder
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8027247684988278415, guid: 14f4cae048adef14288212fe7f110260, type: 3}
       propertyPath: m_Name
       value: Lever
@@ -147562,7 +147558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
       propertyPath: m_LocalPosition.y

@@ -7,6 +7,9 @@ public class Lever : MonoBehaviour
     [SerializeField] float radius;
     [SerializeField] LayerMask playerMask;
 
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite downLever;
+
     bool isInRadius;
     Elevator elevator;
 
@@ -33,6 +36,7 @@ public class Lever : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.E)) && isInRadius)
         {
             elevator.hasCompletedObjective = true;
+            spriteRenderer.sprite = downLever;
             Debug.Log("PlayerHasCompletedObjective");
         }
     }
