@@ -397,14 +397,14 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  health: 45
+  health: 60
   defaultMoveSpeed: 0.6
-  attackRange: 6
+  attackRange: 8
   damage: 1
   spriteRenderer: {fileID: 4523253213960966282}
   animator: {fileID: 6564522644443130063}
   projectile: {fileID: 7774816826796888205, guid: 708bd398d7c2f1c4a9d90911c6b94a20, type: 3}
-  projectileFireRate: 0.95
+  projectileFireRate: 1
   player: {fileID: 0}
   canShoot: 1
   isMoneyEnemy: 1

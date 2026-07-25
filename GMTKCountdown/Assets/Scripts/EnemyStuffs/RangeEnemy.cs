@@ -21,6 +21,7 @@ public class RangeEnemy : EnemyScript
     {
         ProjectileFire();
         FacePlayer();
+        rb.velocity = new Vector2();
 
         if(CanSeePlayer() && canRunAtPlayer)
         {
