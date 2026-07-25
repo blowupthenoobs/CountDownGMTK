@@ -318,7 +318,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 645086801602952632, guid: dc232ef763b104874945c22a9d781a5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 645086801602952632, guid: dc232ef763b104874945c22a9d781a5a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -487,6 +487,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c50bec3d7690466fbcd4ce074fd6bdf, type: 3}
+<<<<<<< Updated upstream
 --- !u!1001 &1302894245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -548,6 +549,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b0782431c1b9974da6ccd504818549e, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &1352917860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -605,6 +608,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c935df3e8ce994a56bd56e34236eb263, type: 3}
+<<<<<<< Updated upstream
 --- !u!1001 &1359790997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,6 +739,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc9d5f1ab136ad84d9c87dc392aa8279, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &1437855728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1110,6 +1116,3 @@ SceneRoots:
   - {fileID: 862642708}
   - {fileID: 535951081}
   - {fileID: 1352917860}
-  - {fileID: 1302894245}
-  - {fileID: 1359790997}
-  - {fileID: 1360210008}

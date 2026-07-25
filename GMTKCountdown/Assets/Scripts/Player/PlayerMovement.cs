@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject weapon;
 
     [HideInInspector] public bool newItem;
+    [SerializeField] Animator animator;
 
     void Awake()
     {
@@ -67,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        Animation();
+
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
 
@@ -81,6 +84,17 @@ public class PlayerMovement : MonoBehaviour
         {
             weaponPlayerIsOver = other.gameObject;
         }
+    }
+
+    void Animation()
+    {
+        if(normalizedInput.magnitude > 0)
+        {
+            animator.SetFloat("AnimMoveX", hInput);
+            animator.SetFloat("AnimMoveY", vInput);
+        }
+
+        animator.SetFloat("AnimMoveMagnitude", normalizedInput.magnitude);
     }
 
     void OnTriggerExit2D(Collider2D other)
