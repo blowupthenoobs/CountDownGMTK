@@ -14,10 +14,16 @@ public class SwordScript : GunScript
     //WeaponControlScript weaponControlScript;
     bool canHit;
 
-    //private void Awake()
-    //{
-        //weaponControlScript = FindFirstObjectByType<WeaponControlScript>();
-    //}
+    protected override void Awake()
+    {
+        base.Awake();
+        weaponControlScript = Object.FindObjectOfType<WeaponControlScript>();
+    }
+
+    void Start()
+    {
+        animator.enabled = false;
+    }
 
     void Update()
     {

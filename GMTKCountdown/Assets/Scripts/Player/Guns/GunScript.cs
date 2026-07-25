@@ -11,7 +11,7 @@ public abstract class GunScript : MonoBehaviour
     public int bulletSpriteIndex;
     public int BulletSpriteIndex => bulletSpriteIndex;
 
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         SetUpGunDetails();
         data.Reload();
