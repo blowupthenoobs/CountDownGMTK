@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4604128129332424354, guid: 81ee057d3cbe0b0438e7d6b6a777fd3a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7242952133561531848, guid: 81ee057d3cbe0b0438e7d6b6a777fd3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5092573
@@ -429,6 +433,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1904073292}
+    - target: {fileID: 3302471398538228173, guid: dc232ef763b104874945c22a9d781a5a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302471398538228173, guid: dc232ef763b104874945c22a9d781a5a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302471398538228173, guid: dc232ef763b104874945c22a9d781a5a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 5316292237549406020, guid: dc232ef763b104874945c22a9d781a5a, type: 3}
       propertyPath: bulletCounter
       value: 
@@ -510,11 +526,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7242952133561531848, guid: 81ee057d3cbe0b0438e7d6b6a777fd3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5376954
+      value: -2.66
       objectReference: {fileID: 0}
     - target: {fileID: 7242952133561531848, guid: 81ee057d3cbe0b0438e7d6b6a777fd3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5340816
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7242952133561531848, guid: 81ee057d3cbe0b0438e7d6b6a777fd3a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -551,10 +567,6 @@ PrefabInstance:
     - target: {fileID: 7317679583424352983, guid: 81ee057d3cbe0b0438e7d6b6a777fd3a, type: 3}
       propertyPath: m_Name
       value: RangeTestEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317679583424352983, guid: 81ee057d3cbe0b0438e7d6b6a777fd3a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -840,6 +852,10 @@ PrefabInstance:
     - target: {fileID: 1550030367154638626, guid: dc9d5f1ab136ad84d9c87dc392aa8279, type: 3}
       propertyPath: m_Name
       value: TestEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550030367154638626, guid: dc9d5f1ab136ad84d9c87dc392aa8279, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
