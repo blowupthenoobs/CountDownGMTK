@@ -11,13 +11,13 @@ public class SwordScript : GunScript
     [SerializeField] float damage;
     [SerializeField] Animator animator;
 
-    WeaponControlScript weaponControlScript;
+    //WeaponControlScript weaponControlScript;
     bool canHit;
 
-    private void Awake()
-    {
-        weaponControlScript = FindFirstObjectByType<WeaponControlScript>();
-    }
+    //private void Awake()
+    //{
+        //weaponControlScript = FindFirstObjectByType<WeaponControlScript>();
+    //}
 
     void Update()
     {

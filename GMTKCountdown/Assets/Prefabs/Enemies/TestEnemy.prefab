@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 6668331322667039155}
   - component: {fileID: 1382275353682249294}
   - component: {fileID: 5179492703093311493}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBox
   m_TagString: EnemyCollide
   m_Icon: {fileID: 0}
