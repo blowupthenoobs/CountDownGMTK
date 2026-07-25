@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SwordScript : GunScript
@@ -7,16 +8,45 @@ public class SwordScript : GunScript
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] Vector2 raycastSize;
 
-    [SerializeField] GameObject damageCollider;
+    [SerializeField] float damage;
+    [SerializeField] Animator animator;
+
+    WeaponControlScript weaponControlScript;
+    bool canHit;
+
+    void Awake()
+    {
+        weaponControlScript = Object.FindObjectOfType<WeaponControlScript>();
+    }
+
+    void Start()
+    {
+        animator.enabled = false;
+    }
+
+    void Update()
+    {
+
+        if(Input.GetMouseButtonDown(0))
+        {
+           animator.SetBool("isAttacking", true);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            animator.SetBool("isAttacking", false);
+        }
+    }
 
     public override void Shoot()
     {
-        var hit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
-
-        if ((Input.GetMouseButtonDown(0)) && hit)
+        if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log("SpawnedCollider");
-            Instantiate(damageCollider, transform.position, transform.rotation);
+            Collider2D hit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
+
+            if (hit)
+            {
+                hit.gameObject.SendMessage("RecieveDamage", damage, SendMessageOptions.DontRequireReceiver);
+            }
         }
     }
 
@@ -33,5 +63,10 @@ public class SwordScript : GunScript
         if(data.cooldownTime <= currentWait)
             return true;
         return false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position, raycastSize);
     }
 }

@@ -66,7 +66,7 @@ public class WeaponControlScript : MonoBehaviour
             if(heldWeapon.CanUseWeapon(currentCooldown))
             {
                 heldWeapon.Shoot();
-                currentCooldown = 0;    
+                currentCooldown = 0;
             }
         }
         // else

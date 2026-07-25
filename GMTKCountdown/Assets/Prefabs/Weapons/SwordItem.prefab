@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2432659643148685823}
   - component: {fileID: 1143920488928414351}
   - component: {fileID: 2177774774146219932}
+  - component: {fileID: 1818895589066763525}
   m_Layer: 0
   m_Name: SwordItem
   m_TagString: Weapon
@@ -105,8 +106,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  raycastSize: {x: 1.91, y: 2.15}
-  damageCollider: {fileID: 7706561122763949722, guid: 82a54d2e7cebed9448c3af37b8de9097, type: 3}
+  raycastSize: {x: 1.75, y: 1.97}
+  damage: 5
 --- !u!61 &2177774774146219932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.046139896, y: 0.019519448}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.52, y: -0.8333334}
@@ -150,5 +151,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0922782, y: 1.2096367}
+  m_Size: {x: 1.1985441, y: 1.2628961}
   m_EdgeRadius: 0
+--- !u!95 &1818895589066763525
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039902834799487547}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7aa322ebb798f8a479ebe59970afc054, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
