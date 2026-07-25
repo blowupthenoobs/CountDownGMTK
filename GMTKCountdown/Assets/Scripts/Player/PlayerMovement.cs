@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject weapon;
 
     [HideInInspector] public bool newItem;
+    [SerializeField] Animator animator;
 
     void Awake()
     {
@@ -67,12 +68,25 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        Animate();
+
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
 
         normalizedInput = new Vector2(hInput, vInput).normalized;
         
         rb.MovePosition(rb.position + normalizedInput * speed * Time.fixedDeltaTime);
+    }
+
+    void Animate()
+    {
+        if(normalizedInput.magnitude > 0)
+        {
+           animator.SetFloat("MoveX", hInput);
+           animator.SetFloat("MoveY", vInput);
+        }
+
+        animator.SetFloat("MoveMaginitude", normalizedInput.magnitude);
     }
 
     void OnTriggerStay2D(Collider2D other)
