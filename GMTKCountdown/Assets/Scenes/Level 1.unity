@@ -195,14 +195,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5995211037611027875, guid: 4aa094b2d92386e46b924cf1dc606842, type: 3}
-      propertyPath: orbitSpeed
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5995211037611027875, guid: 4aa094b2d92386e46b924cf1dc606842, type: 3}
-      propertyPath: movementModeDuration
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8706072950373763038, guid: 4aa094b2d92386e46b924cf1dc606842, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.3109674
