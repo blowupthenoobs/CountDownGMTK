@@ -793,6 +793,10 @@ PrefabInstance:
       propertyPath: m_ChunkCullingBounds.y
       value: 0.009554148
       objectReference: {fileID: 0}
+    - target: {fileID: 4073400115287307034, guid: 54702d41a8d95411490db6e5ce07b7cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8695208378016338771, guid: 54702d41a8d95411490db6e5ce07b7cd, type: 3}
       propertyPath: m_Size.y
       value: 42
@@ -156474,6 +156478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elevator
       objectReference: {fileID: 0}
+    - target: {fileID: 4137166327168315640, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
+      propertyPath: sceneName
+      value: Level3
+      objectReference: {fileID: 0}
     - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03
@@ -156513,6 +156521,10 @@ PrefabInstance:
     - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556413151281676013, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

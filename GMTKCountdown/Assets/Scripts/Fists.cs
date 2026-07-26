@@ -51,11 +51,11 @@ public class Fists : GunScript
         {
             Collider2D hit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
             timeBetweenSwings = 0f;
+            animator.SetTrigger("isPunching");
 
             if (hit && canHit)
             {
                 Debug.Log("Hit");
-                animator.SetTrigger("isPunching");
                 hasHit = true;
                 hit.gameObject.SendMessage("RecieveDamage", hitDamage, SendMessageOptions.DontRequireReceiver);
             }
