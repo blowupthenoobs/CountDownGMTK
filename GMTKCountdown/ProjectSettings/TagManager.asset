@@ -16,6 +16,8 @@ TagManager:
   - Crate
   - Wall
   - DamageCollider
+  - Screen Input
+  - Button
   layers:
   - Default
   - TransparentFX

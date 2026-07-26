@@ -9,6 +9,12 @@ public class Music : MonoBehaviour
     [SerializeField] AudioClip[] songs;
 
     int lastSong = -1;
+    SceneChanger changer;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +25,9 @@ public class Music : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DontDestroyOnLoad(gameObject);
+        changer = FindFirstObjectByType<SceneChanger>();
+
+        audioSource.mute = changer != null && changer.isOnElevatorScene;
     }
 
     void RandomSong()

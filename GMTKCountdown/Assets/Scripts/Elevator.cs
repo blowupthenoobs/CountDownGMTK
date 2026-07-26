@@ -11,12 +11,19 @@ public class Elevator : MonoBehaviour
     [SerializeField] string sceneName;
     public bool hasCompletedObjective;
 
+    Level5Manager level5Manager;
     bool isInRange;
+
+    [SerializeField] bool isNormalElevator;
+    [SerializeField] bool isLevel5Elevator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(level5Manager == null)
+        {
+            level5Manager = FindFirstObjectByType<Level5Manager>();
+        }
     }
 
     // Update is called once per frame
@@ -34,9 +41,19 @@ public class Elevator : MonoBehaviour
             Debug.Log("Need to Complete Objective!");
         }
 
-        if ((Input.GetKeyDown(KeyCode.E)) && isInRange && hasCompletedObjective)
+        if(isNormalElevator)
         {
-            SceneManager.LoadScene(sceneName);
+           if((Input.GetKeyDown(KeyCode.E)) && isInRange && hasCompletedObjective)
+           {
+               SceneManager.LoadScene(sceneName);
+           }
+        }
+        if(isLevel5Elevator )
+        {
+            if ((Input.GetKeyDown(KeyCode.E)) && isInRange && level5Manager.enemiesDead)
+            {
+                SceneManager.LoadScene(sceneName);
+            }
         }
     }
 

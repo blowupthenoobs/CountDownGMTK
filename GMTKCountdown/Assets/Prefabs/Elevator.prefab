@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 09294328b113e4744947cc6041d9c7fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +104,8 @@ MonoBehaviour:
     m_Bits: 8
   sceneName: ElevatorTestScene
   hasCompletedObjective: 0
+  isNormalElevator: 1
+  isLevel5Elevator: 0
 --- !u!61 &6830662056731838289
 BoxCollider2D:
   m_ObjectHideFlags: 0
