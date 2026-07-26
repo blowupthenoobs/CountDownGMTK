@@ -40,8 +40,8 @@ public abstract class EnemyScript : MonoBehaviour
 
         if(hit.collider.gameObject == target)
         {
-            playerCheckMode = 0; //For some reason it breaks if you comment this out
-            lastSeenPlayerMoveDirection = ((Vector2)hit.transform.position - lastSeenPlayerMoveDirection).normalized;
+            // playerCheckMode = 0;
+            // lastSeenPlayerMoveDirection = (hit.transform.position - lastSeenPlayerPosition).normalized;
             lastSeenPlayerPosition = hit.transform.position;   
             sawPlayerLastFrame = true; 
             return true;
