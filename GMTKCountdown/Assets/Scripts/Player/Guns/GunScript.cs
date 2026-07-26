@@ -14,7 +14,6 @@ public abstract class GunScript : MonoBehaviour
     protected virtual void Awake()
     {
         SetUpGunDetails();
-        data.Reload();
     }
 
     public virtual void Shoot()
