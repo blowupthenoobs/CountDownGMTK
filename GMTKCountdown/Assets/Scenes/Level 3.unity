@@ -321743,24 +321743,12 @@ PrefabInstance:
       value: Elevator
       objectReference: {fileID: 0}
     - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.88825196
-      objectReference: {fileID: 0}
-    - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.88825196
-      objectReference: {fileID: 0}
-    - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.88825196
-      objectReference: {fileID: 0}
-    - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.16
+      value: 5.98
       objectReference: {fileID: 0}
     - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
       propertyPath: m_LocalPosition.z
