@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8.5
   damage: 5
+  isMoney: 0
 --- !u!95 &9148934141802381327
 Animator:
   serializedVersion: 5
