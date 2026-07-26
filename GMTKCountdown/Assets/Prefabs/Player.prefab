@@ -134,7 +134,7 @@ MonoBehaviour:
     m_Bits: 128
   raycastSize: {x: 5.15, y: 4.68}
   hitDamage: 2
-  hitTime: 0.1
+  hitTime: 0.5
   noWeapon: 0
   weaponControl: {fileID: 5316292237549406020}
   hasHit: 0
