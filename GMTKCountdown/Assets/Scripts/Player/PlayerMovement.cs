@@ -26,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool newItem;
     [SerializeField] Animator animator;
 
+    [SerializeField] GameObject walkSound;
+
+    [SerializeField] float walkSoundDelay;
+    float walkSoundTimer;
+
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -76,6 +81,20 @@ public class PlayerMovement : MonoBehaviour
         normalizedInput = new Vector2(hInput, vInput).normalized;
         
         rb.MovePosition(rb.position + normalizedInput * speed * Time.fixedDeltaTime);
+
+        walkSoundTimer -= Time.deltaTime;
+        if(normalizedInput != Vector2.zero)
+        {
+            if (walkSoundTimer <= 0)
+            {
+                Instantiate(walkSound, transform.position, Quaternion.identity);
+                walkSoundTimer = walkSoundDelay;
+            }
+        }
+        else
+        {
+            walkSoundTimer = 0;
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)

@@ -109,6 +109,7 @@ MonoBehaviour:
   raycastSize: {x: 1.75, y: 1.97}
   damage: 5
   animator: {fileID: 1818895589066763525}
+  swordSwingSound: {fileID: 7501167470258882312, guid: a58d79f612208494f9cb7bdd26901dbc, type: 3}
 --- !u!61 &2177774774146219932
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class SwordScript : GunScript
     [SerializeField] float damage;
     [SerializeField] Animator animator;
 
+    [SerializeField] GameObject swordSwingSound;
+
     //WeaponControlScript weaponControlScript;
     bool canHit;
 
@@ -29,6 +31,7 @@ public class SwordScript : GunScript
     {
         if (Input.GetMouseButtonDown(0) && transform.parent?.parent?.gameObject.GetComponent<WeaponControlScript>() != null)
         {
+            Instantiate(swordSwingSound, transform.position, Quaternion.identity);
             animator.SetBool("isAttacking", true);
         }
         if (Input.GetMouseButtonUp(0))

@@ -144,6 +144,7 @@ MonoBehaviour:
   weaponControl: {fileID: 5316292237549406020}
   hasHit: 0
   animator: {fileID: 4361722715166093382}
+  punchSound: {fileID: 7501167470258882312, guid: 150de4da5d17d2a4ba5f46b4cef3cb23, type: 3}
 --- !u!1 &6480221152798561691
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +206,8 @@ MonoBehaviour:
   weapon: {fileID: 0}
   newItem: 0
   animator: {fileID: 4361722715166093382}
+  walkSound: {fileID: 7501167470258882312, guid: 90af722a0de197849ac55a88f35af0ff, type: 3}
+  walkSoundDelay: 0.3
 --- !u!50 &1001803851609457975
 Rigidbody2D:
   serializedVersion: 4

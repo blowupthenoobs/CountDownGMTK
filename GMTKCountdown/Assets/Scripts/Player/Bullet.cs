@@ -12,9 +12,11 @@ public class Bullet : MonoBehaviour
     public GameObject[] weaponItems;
     public float dropChance;
 
-    void Start()
+    [SerializeField] GameObject shootSound;
+
+    void Awake()
     {
-        
+        Instantiate(shootSound);
     }
 
     void FixedUpdate()

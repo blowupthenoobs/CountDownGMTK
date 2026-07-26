@@ -142,6 +142,7 @@ MonoBehaviour:
   - {fileID: 4113396297813687897, guid: ed1216646ae2548c1b4cedf9ae844c4e, type: 3}
   - {fileID: 7039902834799487547, guid: c935df3e8ce994a56bd56e34236eb263, type: 3}
   dropChance: 5
+  shootSound: {fileID: 7501167470258882312, guid: 8a2983fcfbac6554facb05c3dec03a26, type: 3}
 --- !u!50 &7454073463885478381
 Rigidbody2D:
   serializedVersion: 4

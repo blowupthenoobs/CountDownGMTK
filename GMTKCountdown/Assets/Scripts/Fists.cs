@@ -18,6 +18,7 @@ public class Fists : GunScript
     public bool hasHit;
 
     [SerializeField] Animator animator;
+    [SerializeField] GameObject punchSound;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,7 @@ public class Fists : GunScript
         {
             Collider2D hit = Physics2D.OverlapBox(transform.position, raycastSize, 0f, enemyLayer);
             timeBetweenSwings = 0f;
+            Instantiate(punchSound, transform.position, Quaternion.identity);
             animator.SetTrigger("isPunching");
 
             if (hit && canHit)
