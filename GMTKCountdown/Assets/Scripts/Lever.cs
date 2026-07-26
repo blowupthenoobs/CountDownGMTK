@@ -9,6 +9,7 @@ public class Lever : MonoBehaviour
 
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite downLever;
+    [SerializeField] GameObject leverSound;
 
     bool isInRadius;
     Elevator elevator;
@@ -37,6 +38,7 @@ public class Lever : MonoBehaviour
         {
             elevator.hasCompletedObjective = true;
             spriteRenderer.sprite = downLever;
+            Instantiate(leverSound);
             Debug.Log("PlayerHasCompletedObjective");
         }
     }

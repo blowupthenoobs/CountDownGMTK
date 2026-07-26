@@ -249,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthBar: {fileID: 0}
+  hurtSound: {fileID: 739702497270684653, guid: c417ab37a790d7d4897d9e8f349e8952, type: 3}
 --- !u!61 &6375686631358707171
 BoxCollider2D:
   m_ObjectHideFlags: 0

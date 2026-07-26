@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int health;
     [SerializeField] Slider healthBar;
+    [SerializeField] GameObject hurtSound;
 
     void Update()
     {
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         healthBar.value = health;
+        Instantiate(hurtSound);
         // Debug.Log(health);
     }
 }

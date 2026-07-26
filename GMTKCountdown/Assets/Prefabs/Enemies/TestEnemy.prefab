@@ -115,6 +115,7 @@ MonoBehaviour:
   damage: 2
   spriteRenderer: {fileID: 605923418516396307}
   animator: {fileID: 4183132386901964714}
+  enemyHurt: {fileID: 1945948839820528759, guid: 8d3dcd108afcabe4caebe0a308822da9, type: 3}
   attackWidth: 0.8
   minDistToAttack: 3
   timeBetweenAttacks: 0.2

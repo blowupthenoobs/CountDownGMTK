@@ -23,6 +23,7 @@ public abstract class EnemyScript : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] protected Animator animator;
+    [SerializeField] GameObject enemyHurt;
 
     protected virtual void Awake()
     {
@@ -146,6 +147,7 @@ public abstract class EnemyScript : MonoBehaviour
 
     public void RecieveDamage(int damage)
     {
+        Instantiate(enemyHurt);
         // Debug.Log("took " + damage.ToString() + " damage");
         health -= damage;
 

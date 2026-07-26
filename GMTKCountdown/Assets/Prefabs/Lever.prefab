@@ -149,3 +149,4 @@ MonoBehaviour:
     m_Bits: 8
   spriteRenderer: {fileID: 7908901012177720648}
   downLever: {fileID: 21300000, guid: cb2ff243089377a43aa0d3e6fa5878d9, type: 3}
+  leverSound: {fileID: 4038421818887052454, guid: 2fcaed794ebf5e347bf3dd0c8a263223, type: 3}
