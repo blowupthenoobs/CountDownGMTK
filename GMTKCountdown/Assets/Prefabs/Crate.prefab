@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2802837993836476954}
   - component: {fileID: 1498833178514281551}
   - component: {fileID: 2735241893941109004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Crate
   m_TagString: Crate
   m_Icon: {fileID: 0}
@@ -99,12 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb3e8f8244834b7c8e47bf5bf1fe848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponItems:
-  - {fileID: 1689624241021896480, guid: 2c50bec3d7690466fbcd4ce074fd6bdf, type: 3}
-  - {fileID: 7039902834799487547, guid: c935df3e8ce994a56bd56e34236eb263, type: 3}
-  - {fileID: 4113396297813687897, guid: ed1216646ae2548c1b4cedf9ae844c4e, type: 3}
-  - {fileID: 7888518089474636717, guid: 0927e3d9877d4432c92beb91725de74a, type: 3}
-  chance: 101
 --- !u!50 &1498833178514281551
 Rigidbody2D:
   serializedVersion: 4
