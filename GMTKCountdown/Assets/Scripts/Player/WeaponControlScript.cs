@@ -13,6 +13,15 @@ public class WeaponControlScript : MonoBehaviour
     private float currentCooldown;
 
     [SerializeField] BulletCounter bulletCounter;
+    private static GunData heldDataOfWeapon;
+
+    void Awake()
+    {
+        if(heldDataOfWeapon != null)
+        {
+            //spawn in weapon of the held datatype and pick it up
+        }
+    }
 
     void Update()
     {

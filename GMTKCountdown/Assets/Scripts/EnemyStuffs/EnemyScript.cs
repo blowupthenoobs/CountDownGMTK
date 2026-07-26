@@ -40,10 +40,10 @@ public abstract class EnemyScript : MonoBehaviour
 
         if(hit.collider.gameObject == target)
         {
-            playerCheckMode = 0;
-            lastSeenPlayerMoveDirection = ((Vector2)hit.transform.position - lastSeenPlayerMoveDirection).normalized;
-            lastSeenPlayerPosition = hit.transform.position;   
-            sawPlayerLastFrame = true; 
+            // playerCheckMode = 0; //This feature didn't work out so well, so minimizing overhead here, lol
+            // lastSeenPlayerMoveDirection = ((Vector2)hit.transform.position - lastSeenPlayerMoveDirection).normalized;
+            // lastSeenPlayerPosition = hit.transform.position;   
+            // sawPlayerLastFrame = true; 
             return true;
         }
 
@@ -59,37 +59,37 @@ public abstract class EnemyScript : MonoBehaviour
 
     protected void CheckLastSeenPlayerPos(float speed)
     {
-        if(sawPlayerLastFrame)
-            playerCheckMode = 1;
+        // if(sawPlayerLastFrame)
+        //     playerCheckMode = 1;
         
-        switch(playerCheckMode)
-        {
-            case 1:
-                rb.MovePosition(Vector2.MoveTowards(transform.position, lastSeenPlayerPosition, speed * Time.fixedDeltaTime));
+        // switch(playerCheckMode)
+        // {
+        //     case 1:
+        //         rb.MovePosition(Vector2.MoveTowards(transform.position, lastSeenPlayerPosition, speed * Time.fixedDeltaTime));
 
-                if(((Vector2)transform.position - lastSeenPlayerMoveDirection).magnitude <= .5)
-                    playerCheckMode = 2;
-                break;
-            case 2:
-                rb.MovePosition(Vector2.MoveTowards(transform.position, (Vector2)lastSeenPlayerPosition + lastSeenPlayerMoveDirection * distToCheckForPlayer, speed * Time.fixedDeltaTime));
+        //         if(((Vector2)transform.position - lastSeenPlayerMoveDirection).magnitude <= .5)
+        //             playerCheckMode = 2;
+        //         break;
+        //     case 2:
+        //         rb.MovePosition(Vector2.MoveTowards(transform.position, (Vector2)lastSeenPlayerPosition + lastSeenPlayerMoveDirection * distToCheckForPlayer, speed * Time.fixedDeltaTime));
 
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, lastSeenPlayerMoveDirection, minWallDistForPlayerCheck, raycastLayers);
-                if(hit || ((Vector2)transform.position - (Vector2)lastSeenPlayerPosition + lastSeenPlayerMoveDirection * distToCheckForPlayer).magnitude <= .5)
-                    playerCheckMode = 3;                
-                break;
-            case 3:
-                rb.MovePosition(Vector2.MoveTowards(transform.position, lastSeenPlayerPosition, speed * Time.fixedDeltaTime));
+        //         RaycastHit2D hit = Physics2D.Raycast(transform.position, lastSeenPlayerMoveDirection, minWallDistForPlayerCheck, raycastLayers);
+        //         if(hit || ((Vector2)transform.position - (Vector2)lastSeenPlayerPosition + lastSeenPlayerMoveDirection * distToCheckForPlayer).magnitude <= .5)
+        //             playerCheckMode = 3;                
+        //         break;
+        //     case 3:
+        //         rb.MovePosition(Vector2.MoveTowards(transform.position, lastSeenPlayerPosition, speed * Time.fixedDeltaTime));
 
-                if(((Vector2)transform.position - lastSeenPlayerMoveDirection).magnitude <= .5)
-                    playerCheckMode = 0;
-                break;
-            default:
-                break;
-        }
+        //         if(((Vector2)transform.position - lastSeenPlayerMoveDirection).magnitude <= .5)
+        //             playerCheckMode = 0;
+        //         break;
+        //     default:
+        //         break;
+        // }
 
-        sawPlayerLastFrame = false;
-        if(playerCheckMode != 0)
-            Debug.Log(playerCheckMode);
+        // sawPlayerLastFrame = false;
+        // if(playerCheckMode != 0)
+        //     Debug.Log(playerCheckMode);
     }
 
     protected void OrbitPlayer(float orbitDistance, float orbitSpeed)
