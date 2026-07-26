@@ -13,13 +13,35 @@ public class WeaponControlScript : MonoBehaviour
     private float currentCooldown;
 
     [SerializeField] BulletCounter bulletCounter;
+    [SerializeField] GameObject[] weaponTypes;
     private static GunData heldDataOfWeapon;
 
     void Awake()
     {
-        if(heldDataOfWeapon != null)
+        GameObject recovery = null;
+
+        switch(heldDataOfWeapon.weapon)
         {
-            //spawn in weapon of the held datatype and pick it up
+            case GunData.WeaponType.Revolver:
+                recovery = Instantiate(weaponTypes[0]);
+                break;
+            case GunData.WeaponType.Shotgun:
+                recovery = Instantiate(weaponTypes[1]);
+                break;
+            case GunData.WeaponType.Sniper:
+                recovery = Instantiate(weaponTypes[2]);
+                break;
+            case GunData.WeaponType.Sword:
+                recovery = Instantiate(weaponTypes[3]);
+                break;
+            default:
+                break;
+        }
+
+        if(recovery != null)
+        {
+            recovery.GetComponent<GunScript>().data = heldDataOfWeapon;
+            PickUpWeapon(recovery);
         }
     }
 
@@ -90,6 +112,7 @@ public class WeaponControlScript : MonoBehaviour
         newWeapon.transform.position = gunSpot.position;
         newWeapon.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
         heldWeapon = newWeapon.GetComponent<GunScript>();
+        heldDataOfWeapon = heldWeapon.data;
 
         currentCooldown = 100;
         currentReloadTime = 0;
@@ -111,6 +134,7 @@ public class WeaponControlScript : MonoBehaviour
         {
             heldWeapon.transform.SetParent(null);
             heldWeapon = null;
+            heldDataOfWeapon = null;
         }
     }
 
