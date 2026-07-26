@@ -32,28 +32,20 @@ public class MeleeExecutive : EnemyScript
             {
                 RunAtPlayer(defaultMoveSpeed);
                 animator.SetBool("isIdle", false);
-            }
 
-            if(target == null)
-            {
-                animator.SetBool("isIdle", true);
-            }
-            
-            if(target != null)
-            {
                 if((target.transform.position - transform.position).magnitude <= minDistToAttack)
-                {
-                    attacking = true;
-                    animator.SetTrigger("isAttacking");
-                    Debug.Log("AttackTriggered");
                     StartCoroutine(Attack());
-                }
             }
+            else if(playerCheckMode != 0 || sawPlayerLastFrame)
+                CheckLastSeenPlayerPos(defaultMoveSpeed);
+            else
+                animator.SetBool("isIdle", true);
         }
     }
 
     private IEnumerator Attack()
     {
+        animator.SetTrigger("isAttacking");
         attacking = true;
         var direction = lastSeenPlayerPosition - transform.position;
 
