@@ -360237,6 +360237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elevator
       objectReference: {fileID: 0}
+    - target: {fileID: 4137166327168315640, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
+      propertyPath: sceneName
+      value: Level 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8018374851446918665, guid: b7c81aced10b14c43b85b720bff83db9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.49
