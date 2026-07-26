@@ -20,7 +20,7 @@ public class WeaponControlScript : MonoBehaviour
     {
         GameObject recovery = null;
 
-        switch(heldDataOfWeapon.weapon)
+        switch(heldDataOfWeapon?.weapon)
         {
             case GunData.WeaponType.Revolver:
                 recovery = Instantiate(weaponTypes[0]);
