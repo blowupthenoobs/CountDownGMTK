@@ -103,7 +103,7 @@ MonoBehaviour:
   risingSpeed: 3
   fallingSpeed: 0.5
   fallAccellerationSpeed: 5
-  damage: 10
+  damage: 4
   splashRadius: 2
   playerLayer:
     serializedVersion: 2
